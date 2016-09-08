@@ -17,10 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+    
     _window = [[UIWindow alloc]initWithFrame:kScreenBounds];
     _window.backgroundColor = [UIColor whiteColor];
     _window.rootViewController = [LBTabBarController new];
     [_window makeKeyAndVisible];
+   
+    
+    
     return YES;
 }
 

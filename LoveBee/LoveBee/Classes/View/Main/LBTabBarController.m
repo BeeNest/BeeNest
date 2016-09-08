@@ -22,13 +22,19 @@
     [self addTabBarInfo];
 }
 -(void)addTabBarWithNum:(NSInteger)num andTitle:(NSString *)title andImgName:(NSString*)imgName{
-    UITabBarItem *home = self.items[num];
+    UITabBarItem *item = self.items[num];
     
-    home.title = title;
+    item.title = title;
     
-    [home setImage:[UIImage imageNamed:imgName]];
+    [item setImage:[UIImage imageNamed:imgName]];
     
-    home.selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_r",imgName]];
+
+    UIImage *homeImageSel = [UIImage imageNamed:[NSString stringWithFormat:@"%@_r",imgName]];
+    homeImageSel = [homeImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item.selectedImage = homeImageSel;
+    
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor grayColor]} forState:UIControlStateSelected];
     
 }
 -(void)addTabBarInfo{
@@ -40,7 +46,6 @@
     [self addTabBarWithNum:1 andTitle:@"闪送超市" andImgName:@"v2_order"];
     [self addTabBarWithNum:2 andTitle:@"购物车" andImgName:@"shopCart"];
     [self addTabBarWithNum:3 andTitle:@"我的" andImgName:@"v2_my"];
-    
     
     
 }
