@@ -1,5 +1,5 @@
 //
-//  LBHomeCollectionViewController.h
+//  LBHomeViewController.h
 //  LoveBee
 //
 //  Created by Jiangergo Pk Czt on 16/9/8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LBHomeCollectionViewController : UICollectionViewController
+@interface LBHomeViewController : UIViewController
 
 @end
