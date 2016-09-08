@@ -16,6 +16,8 @@
 		23FA61181D81000C009B928F /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61171D81000C009B928F /* Shopping.storyboard */; };
 		23FA611A1D81001D009B928F /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61191D81001D009B928F /* Me.storyboard */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
+		E35509861D813E1F003934D4 /* LBHomeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509851D813E1F003934D4 /* LBHomeCollectionViewController.m */; };
+		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		23FA61191D81001D009B928F /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		6727408D407E81D97B8A6929 /* libPods-LoveBee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveBee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC67DAE5FAE794132970D32 /* Pods-LoveBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.release.xcconfig"; sourceTree = "<group>"; };
+		E35509841D813E1F003934D4 /* LBHomeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCollectionViewController.h; sourceTree = "<group>"; };
+		E35509851D813E1F003934D4 /* LBHomeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCollectionViewController.m; sourceTree = "<group>"; };
+		E355098A1D814B99003934D4 /* LBHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCell.h; sourceTree = "<group>"; };
+		E355098B1D814B99003934D4 /* LBHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				23FA61131D80FFCE009B928F /* Home.storyboard */,
+				E35509841D813E1F003934D4 /* LBHomeCollectionViewController.h */,
+				E35509851D813E1F003934D4 /* LBHomeCollectionViewController.m */,
+				E355098A1D814B99003934D4 /* LBHomeCell.h */,
+				E355098B1D814B99003934D4 /* LBHomeCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -333,7 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
+				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
+				E35509861D813E1F003934D4 /* LBHomeCollectionViewController.m in Sources */,
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

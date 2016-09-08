@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--首页-->
-        <scene sceneID="CA1-4S-rKc">
-            <objects>
-                <viewController id="8QR-98-fbo" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cgI-Ob-Mto"/>
-                        <viewControllerLayoutGuide type="bottom" id="hfv-sK-52A"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4U6-mM-jqb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="首页" id="ZlX-Wd-RnY"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hQe-IX-wFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1065" y="307"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kmw-4H-asH">
             <objects>
@@ -35,12 +16,48 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8QR-98-fbo" kind="relationship" relationship="rootViewController" id="HTN-GL-aTh"/>
+                        <segue destination="Br0-Jz-DDJ" kind="relationship" relationship="rootViewController" id="QDt-dJ-rIA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhY-1I-95h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253" y="307"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="gLX-6O-fa8">
+            <objects>
+                <collectionViewController modalTransitionStyle="flipHorizontal" id="Br0-Jz-DDJ" customClass="LBHomeCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kut-kZ-9QI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uoh-dH-5Go">
+                            <size key="itemSize" width="414" height="171"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2FY-6H-1ku">
+                                <rect key="frame" x="-20" y="64" width="414" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Br0-Jz-DDJ" id="zVE-If-uCj"/>
+                            <outlet property="delegate" destination="Br0-Jz-DDJ" id="gJ6-5X-vUg"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="首页" id="L31-yA-ffT"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9EH-ti-4kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="307"/>
         </scene>
     </scenes>
 </document>
