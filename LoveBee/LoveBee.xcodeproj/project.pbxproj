@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2371A6001D815A9200F326C3 /* LBSupermarketViewController.m */; };
+		2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2371A6011D815A9200F326C3 /* Supermarket.storyboard */; };
 		23E820D51D80F42A007A7205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E820D41D80F42A007A7205 /* main.m */; };
 		23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E820D71D80F42A007A7205 /* AppDelegate.m */; };
 		23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E820DF1D80F42A007A7205 /* Assets.xcassets */; };
 		23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA610F1D80FDA3009B928F /* LBTabBarController.m */; };
 		23FA61141D80FFCE009B928F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61131D80FFCE009B928F /* Home.storyboard */; };
-		23FA61161D80FFF6009B928F /* Supermarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61151D80FFF6009B928F /* Supermarket.storyboard */; };
 		23FA61181D81000C009B928F /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61171D81000C009B928F /* Shopping.storyboard */; };
 		23FA611A1D81001D009B928F /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61191D81001D009B928F /* Me.storyboard */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
@@ -22,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		204A6523747E0B100050B0B6 /* Pods-LoveBee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.debug.xcconfig"; sourceTree = "<group>"; };
+		2371A5FF1D815A9200F326C3 /* LBSupermarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSupermarketViewController.h; sourceTree = "<group>"; };
+		2371A6001D815A9200F326C3 /* LBSupermarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSupermarketViewController.m; sourceTree = "<group>"; };
+		2371A6011D815A9200F326C3 /* Supermarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Supermarket.storyboard; sourceTree = "<group>"; };
 		23E820D01D80F42A007A7205 /* LoveBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E820D41D80F42A007A7205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E820D61D80F42A007A7205 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,7 +36,6 @@
 		23FA610E1D80FDA3009B928F /* LBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTabBarController.h; sourceTree = "<group>"; };
 		23FA610F1D80FDA3009B928F /* LBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTabBarController.m; sourceTree = "<group>"; };
 		23FA61131D80FFCE009B928F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		23FA61151D80FFF6009B928F /* Supermarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Supermarket.storyboard; sourceTree = "<group>"; };
 		23FA61171D81000C009B928F /* Shopping.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		23FA61191D81001D009B928F /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		6727408D407E81D97B8A6929 /* libPods-LoveBee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveBee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +58,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2371A5FA1D815A6700F326C3 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		2371A5FB1D815A6700F326C3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		2371A5FC1D815A6700F326C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2371A5FD1D815A6700F326C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2371A5FE1D815A9200F326C3 /* Supermarket */ = {
+			isa = PBXGroup;
+			children = (
+				2371A5FF1D815A9200F326C3 /* LBSupermarketViewController.h */,
+				2371A6001D815A9200F326C3 /* LBSupermarketViewController.m */,
+				2371A6011D815A9200F326C3 /* Supermarket.storyboard */,
+			);
+			path = Supermarket;
+			sourceTree = "<group>";
+		};
 		23E820C71D80F42A007A7205 = {
 			isa = PBXGroup;
 			children = (
@@ -98,34 +139,13 @@
 		23FA60FB1D80F987009B928F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				23FA60FC1D80F987009B928F /* Common */,
-				23FA60FD1D80F987009B928F /* Lib */,
-				23FA60FE1D80F987009B928F /* Model */,
 				23FA60FF1D80F987009B928F /* View */,
-				23FA61051D80F987009B928F /* ViewModel */,
+				2371A5FA1D815A6700F326C3 /* Commom */,
+				2371A5FB1D815A6700F326C3 /* Lib */,
+				2371A5FC1D815A6700F326C3 /* Model */,
+				2371A5FD1D815A6700F326C3 /* ViewModel */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		23FA60FC1D80F987009B928F /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		23FA60FD1D80F987009B928F /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		23FA60FE1D80F987009B928F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		23FA60FF1D80F987009B928F /* View */ = {
@@ -134,7 +154,7 @@
 				23FA61011D80F987009B928F /* Main */,
 				23FA61061D80FA56009B928F /* Guide */,
 				23FA61001D80F987009B928F /* Home */,
-				23FA61041D80F987009B928F /* Supermarket */,
+				2371A5FE1D815A9200F326C3 /* Supermarket */,
 				23FA61031D80F987009B928F /* Shopping */,
 				23FA61021D80F987009B928F /* Profile */,
 			);
@@ -176,21 +196,6 @@
 				23FA61171D81000C009B928F /* Shopping.storyboard */,
 			);
 			path = Shopping;
-			sourceTree = "<group>";
-		};
-		23FA61041D80F987009B928F /* Supermarket */ = {
-			isa = PBXGroup;
-			children = (
-				23FA61151D80FFF6009B928F /* Supermarket.storyboard */,
-			);
-			path = Supermarket;
-			sourceTree = "<group>";
-		};
-		23FA61051D80F987009B928F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		23FA61061D80FA56009B928F /* Guide */ = {
@@ -279,8 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23FA61161D80FFF6009B928F /* Supermarket.storyboard in Resources */,
 				23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */,
+				2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */,
 				23FA611A1D81001D009B928F /* Me.storyboard in Resources */,
 				23FA61181D81000C009B928F /* Shopping.storyboard in Resources */,
 				23FA61141D80FFCE009B928F /* Home.storyboard in Resources */,
@@ -344,6 +349,7 @@
 			files = (
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
+				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
