@@ -3,6 +3,14 @@
 
 #define kScreenHeigth     [UIScreen mainScreen].bounds.size.height
 
+<<<<<<< Updated upstream
 
 #pragma mark -HOME 属性
 #define HomeCollectionViewCellMargin 10
+=======
+#define kBigTextFont      [UIFont systemFontOfSize:14]
+#define kMidTextFont      [UIFont systemFontOfSize:12]
+#define kSmallTextFont    [UIFont systemFontOfSize:10]
+#define kGrayTextColor    [UIColor grayColor]
+#define kRedTextColor     [UIColor redColor]
+>>>>>>> Stashed changes
