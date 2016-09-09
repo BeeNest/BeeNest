@@ -10,8 +10,9 @@
 		2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2371A6001D815A9200F326C3 /* LBSupermarketViewController.m */; };
 		2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2371A6011D815A9200F326C3 /* Supermarket.storyboard */; };
 		2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2371A6051D815C7200F326C3 /* AFHTTPTool.m */; };
-		2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2371A6081D81882400F326C3 /* LBSuperLeftTableViewModel.m */; };
 		2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2371A60C1D818CD900F326C3 /* NSArray+Log.m */; };
+		23ACE7161D825E53007FECC3 /* LBRightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ACE7141D825E53007FECC3 /* LBRightTableCell.m */; };
+		23ACE71A1D829712007FECC3 /* LBSuperLeftTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ACE7191D829712007FECC3 /* LBSuperLeftTableViewModel.m */; };
 		23E820D51D80F42A007A7205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E820D41D80F42A007A7205 /* main.m */; };
 		23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E820D71D80F42A007A7205 /* AppDelegate.m */; };
 		23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E820DF1D80F42A007A7205 /* Assets.xcassets */; };
@@ -35,10 +36,12 @@
 		2371A6011D815A9200F326C3 /* Supermarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Supermarket.storyboard; sourceTree = "<group>"; };
 		2371A6041D815C7200F326C3 /* AFHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPTool.h; sourceTree = "<group>"; };
 		2371A6051D815C7200F326C3 /* AFHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPTool.m; sourceTree = "<group>"; };
-		2371A6071D81882400F326C3 /* LBSuperLeftTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSuperLeftTableViewModel.h; sourceTree = "<group>"; };
-		2371A6081D81882400F326C3 /* LBSuperLeftTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSuperLeftTableViewModel.m; sourceTree = "<group>"; };
 		2371A60B1D818CD900F326C3 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		2371A60C1D818CD900F326C3 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		23ACE7131D825E53007FECC3 /* LBRightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRightTableCell.h; sourceTree = "<group>"; };
+		23ACE7141D825E53007FECC3 /* LBRightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRightTableCell.m; sourceTree = "<group>"; };
+		23ACE7181D829712007FECC3 /* LBSuperLeftTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSuperLeftTableViewModel.h; sourceTree = "<group>"; };
+		23ACE7191D829712007FECC3 /* LBSuperLeftTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSuperLeftTableViewModel.m; sourceTree = "<group>"; };
 		23E820D01D80F42A007A7205 /* LoveBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E820D41D80F42A007A7205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E820D61D80F42A007A7205 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
 		2371A5FD1D815A6700F326C3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +107,20 @@
 				2371A6081D81882400F326C3 /* LBSuperLeftTableViewModel.m */,
 				E35509A01D829267003934D4 /* LBHomeViewModel.h */,
 				E35509A11D829267003934D4 /* LBHomeViewModel.m */,
+=======
+		2371A5FC1D815A6700F326C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23ACE7181D829712007FECC3 /* LBSuperLeftTableViewModel.h */,
+				23ACE7191D829712007FECC3 /* LBSuperLeftTableViewModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2371A5FD1D815A6700F326C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+>>>>>>> Stashed changes
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +128,7 @@
 		2371A5FE1D815A9200F326C3 /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				23ACE7121D825E08007FECC3 /* View */,
 				2371A5FF1D815A9200F326C3 /* LBSupermarketViewController.h */,
 				2371A6001D815A9200F326C3 /* LBSupermarketViewController.m */,
 				2371A6011D815A9200F326C3 /* Supermarket.storyboard */,
@@ -124,6 +143,15 @@
 				2371A60C1D818CD900F326C3 /* NSArray+Log.m */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		23ACE7121D825E08007FECC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23ACE7131D825E53007FECC3 /* LBRightTableCell.h */,
+				23ACE7141D825E53007FECC3 /* LBRightTableCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		23E820C71D80F42A007A7205 = {
@@ -400,16 +428,24 @@
 			files = (
 				2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */,
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
+				23ACE71A1D829712007FECC3 /* LBSuperLeftTableViewModel.m in Sources */,
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
+<<<<<<< Updated upstream
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
 				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
+=======
+>>>>>>> Stashed changes
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
+<<<<<<< Updated upstream
 				E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */,
+=======
+				23ACE7161D825E53007FECC3 /* LBRightTableCell.m in Sources */,
+>>>>>>> Stashed changes
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
