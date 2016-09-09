@@ -24,7 +24,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
-        flowLayout.estimatedItemSize = CGSizeMake(100, 100);
+        flowLayout.itemSize = CGSizeMake(kScreenWidth* 0.5 - 20, kScreenHeigth * 0.3 + 50);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
@@ -43,6 +43,8 @@
     [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"cell"];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -60,9 +62,8 @@
     
     return cell;
 }
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    return CGSizeZero;
-//}
+
+
 
 
 - (void)didReceiveMemoryWarning {
