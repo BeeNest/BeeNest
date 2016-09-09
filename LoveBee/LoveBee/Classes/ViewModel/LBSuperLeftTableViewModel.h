@@ -27,7 +27,6 @@
 
 +(instancetype)modelWithDict:(NSDictionary *)dict;
 
-+(void)categoriesWithSuccess:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock;
-+(void)productWithID:(NSString *)ID success:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock;
++(void)productWithLeftTableView:(BOOL)isTrue success:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock;
 
 @end
