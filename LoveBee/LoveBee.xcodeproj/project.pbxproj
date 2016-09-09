@@ -22,7 +22,6 @@
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
 		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 		E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098E1D8157AF003934D4 /* LBHomeViewController.m */; };
-		E35509921D81654A003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509911D81654A003934D4 /* LBPriceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +53,6 @@
 		E355098B1D814B99003934D4 /* LBHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		E355098D1D8157AF003934D4 /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		E355098E1D8157AF003934D4 /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
-		E35509901D81654A003934D4 /* LBPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBPriceView.h; path = LoveBee/Classes/View/Home/LBPriceView.h; sourceTree = SOURCE_ROOT; };
-		E35509911D81654A003934D4 /* LBPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBPriceView.m; path = LoveBee/Classes/View/Home/LBPriceView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,13 +70,8 @@
 		2371A5FA1D815A6700F326C3 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
 				2371A6041D815C7200F326C3 /* AFHTTPTool.h */,
 				2371A6051D815C7200F326C3 /* AFHTTPTool.m */,
-=======
-				E35509901D81654A003934D4 /* LBPriceView.h */,
-				E35509911D81654A003934D4 /* LBPriceView.m */,
->>>>>>> Stashed changes
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -378,12 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< Updated upstream
 				2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */,
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
-=======
-				E35509921D81654A003934D4 /* LBPriceView.m in Sources */,
->>>>>>> Stashed changes
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,

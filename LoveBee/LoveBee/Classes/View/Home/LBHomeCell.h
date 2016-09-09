@@ -10,6 +10,4 @@
 
 @interface LBHomeCell : UICollectionViewCell
 
-
-
 @end

@@ -7,9 +7,8 @@
 //
 
 #import "LBHomeViewController.h"
-#import "LBHomeCell.h"
 
-@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface LBHomeViewController ()
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -19,18 +18,7 @@
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-        flowLayout.minimumLineSpacing = 8;
-        flowLayout.minimumInteritemSpacing = 5;
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
-        flowLayout.estimatedItemSize = CGSizeMake(100, 100);
-        
-        _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        _collectionView.autoresizesSubviews = YES;
-        
+        _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
     }
     return _collectionView;
 }
@@ -38,32 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view = self.collectionView;
     
-    [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"cell"];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    LBHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    [cell layoutIfNeeded];
-    
-    return cell;
 }
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    return CGSizeZero;
-//}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
