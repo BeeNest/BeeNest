@@ -7,12 +7,13 @@
 //
 
 #import "LBSupermarketViewController.h"
+#import "LBSuperLeftTableViewModel.h"
 
 @interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
 
-@property (strong, nonatomic) NSArray *dataArray;
+@property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
 @property (strong, nonatomic) NSArray *rightDataArray;
 //左边选中的
 @property (copy, nonatomic) NSString *selectLeftNameStr;
@@ -22,11 +23,47 @@
 
 @implementation LBSupermarketViewController
 
+-(void)setDataArray:(NSArray *)dataArray{
+    
+    _dataArray = dataArray;
+    
+    [self.leftTableView reloadData];
+
+    
+}
+-(void)setRightDataArray:(NSArray *)rightDataArray{
+    
+    _rightDataArray = rightDataArray;
+    
+    [self.rightTableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataArray = @[@"4",@"1", @"2", @"3"] ;
+
     
-    self.rightDataArray = @[@{@"1":@[@"小吃", @"烧烤", @"蛋糕"]},@{@"2":@[@"酒店1", @"烧烤", @"蛋糕"]},@{@"3":@[@"丽人1", @"烧烤", @"蛋糕"]},@{@"4":@[@"休闲娱乐1", @"烧烤", @"蛋糕"]}];
+    [LBSuperLeftTableViewModel productWithLeftTableView:YES success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+   
+        self.dataArray = array;
+        
+        NSLog(@"3:%@",self.dataArray);
+        
+    } error:^{
+        
+        NSLog(@"获取失败");
+    }];
+    
+    [LBSuperLeftTableViewModel productWithLeftTableView:false success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+        
+        self.rightDataArray = array;
+        
+        NSLog(@"4:%@",self.rightDataArray);
+        
+    } error:^{
+        
+        NSLog(@"获取失败");
+    }];
+
     
     
 }
@@ -60,7 +97,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     if (tableView == self.leftTableView) {
-        cell.textLabel.text = self.dataArray[indexPath.row];
+        
+        LBSuperLeftTableViewModel *model = self.dataArray[indexPath.row];
+        
+        cell.textLabel.text = model.name;
     } else {
         
         NSArray *array = nil;
