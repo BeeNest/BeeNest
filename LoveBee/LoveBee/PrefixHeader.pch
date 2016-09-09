@@ -3,3 +3,6 @@
 
 #define kScreenHeigth     [UIScreen mainScreen].bounds.size.height
 
+#pragma mark -HOME 属性
+#define HomeCollectionViewCellMargin 10
+
