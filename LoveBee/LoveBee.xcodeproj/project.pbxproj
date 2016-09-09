@@ -22,6 +22,7 @@
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
 		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 		E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098E1D8157AF003934D4 /* LBHomeViewController.m */; };
+		E35509951D824CAC003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509941D824CAC003934D4 /* LBPriceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		E355098B1D814B99003934D4 /* LBHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		E355098D1D8157AF003934D4 /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		E355098E1D8157AF003934D4 /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
+		E35509931D824CAC003934D4 /* LBPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPriceView.h; sourceTree = "<group>"; };
+		E35509941D824CAC003934D4 /* LBPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPriceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				E355098E1D8157AF003934D4 /* LBHomeViewController.m */,
 				E355098A1D814B99003934D4 /* LBHomeCell.h */,
 				E355098B1D814B99003934D4 /* LBHomeCell.m */,
+				E35509931D824CAC003934D4 /* LBPriceView.h */,
+				E35509941D824CAC003934D4 /* LBPriceView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
+				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
