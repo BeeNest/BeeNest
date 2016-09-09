@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBGoodsModel.h"
 
 @interface LBHomeCell : UICollectionViewCell
+
+@property (nonatomic, strong) LBGoodsModel *goods;
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBGoodsModel.h"
 
 @interface LBPriceView : UIView
 
 @property (nonatomic, assign) BOOL hasMarketPrice;
 
-- (instancetype)initWithPrice:(NSString *)price marketPrice:(NSString *)marketPrice;
+@property (nonatomic, strong) LBGoodsModel *goods;
+
 
 @end

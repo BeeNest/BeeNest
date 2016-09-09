@@ -9,7 +9,7 @@
 #import "LBHomeCell.h"
 #import "LBPriceView.h"
 #import <Masonry.h>
-
+#import <UIImageView+WebCache.h>
 
 @interface LBHomeCell ()
 
@@ -41,7 +41,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        
         [self setupUI];
     }
     return self;
@@ -66,7 +66,7 @@
     self.specificsLabel.textColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1];
     self.specificsLabel.font = [UIFont systemFontOfSize:12];
     self.specificsLabel.textAlignment = NSTextAlignmentLeft;
-    self.priceView = [[LBPriceView alloc]initWithPrice:@"10" marketPrice:@"12"];
+    self.priceView = [[LBPriceView alloc]init];
     
     // 添加控件
     [self addSubview:_goodsImageView];
@@ -79,7 +79,9 @@
     // 添加约束
     __weak typeof(self) weakSelf = self;
     [weakSelf.goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.leading.trailing.mas_equalTo(weakSelf);
+//        make.top.leading.trailing.mas_equalTo(weakSelf);
+        make.top.leading.trailing.equalTo(self);
+        make.height.width.equalTo(self.mas_width);
     }];
     [weakSelf.goodsNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
@@ -87,17 +89,21 @@
         make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf.goodsNameLabel.mas_bottom);
-        make.leading.mas_equalTo(weakSelf.goodsNameLabel);
-        make.height.mas_equalTo(15);
+        make.top.equalTo(_goodsNameLabel.mas_bottom).offset(3);
+        make.leading.equalTo(_goodsNameLabel);
+        make.width.mas_equalTo(25);
+        make.height.mas_equalTo(13);
+//        make.height.mas_equalTo(15);
     }];
     [weakSelf.giveImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(weakSelf.fineImageView.mas_trailing);
-        make.top.height.mas_equalTo(weakSelf.fineImageView);
+        make.top.equalTo(_fineImageView);
+        make.leading.equalTo(_fineImageView.mas_trailing).offset(10);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(13);
     }];
     [weakSelf.specificsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(weakSelf.fineImageView.mas_leading);
-        make.top.mas_equalTo(weakSelf.fineImageView.mas_bottom);
+        make.top.equalTo(_giveImageView.mas_bottom).mas_offset(5);
+        make.leading.equalTo(_goodsNameLabel);
     }];
     [weakSelf.priceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(weakSelf.specificsLabel);
@@ -108,10 +114,21 @@
     
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
+- (void)setGoods:(LBGoodsModel *)goods{
+    _goods = goods;
     
+    [_goodsImageView sd_setImageWithURL:[NSURL URLWithString:goods.img] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     
+    _goodsNameLabel.text = goods.name;
     
+    _fineImageView.hidden = !(goods.is_xf == 1);
+    
+    _giveImageView.hidden = ![goods.pm_desc isEqualToString:@"买一赠一"];
+    
+    _specificsLabel.text = goods.specifics;
+    
+    _priceView.goods = goods;
 }
+
+
 @end

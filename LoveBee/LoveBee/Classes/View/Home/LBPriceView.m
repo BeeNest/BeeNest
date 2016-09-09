@@ -58,32 +58,28 @@
 }
 
 // 供外界赋值使用的方法
-- (instancetype)initWithPrice:(NSString *)price marketPrice:(NSString *)marketPrice{
-    self = [super init];
-    if (self) {
-        if (price != nil && price.length != 0) {
-            _priceLabel.text = [NSString stringWithFormat:@"$ %@",price];
-            [_priceLabel sizeToFit];
-        }
-        if (marketPrice != nil && marketPrice.length != 0) {
-            _marketPriceLabel.text = [NSString stringWithFormat:@"$ %@",marketPrice];
-            _hasMarketPrice = YES;
-            [_marketPriceLabel sizeToFit];
-        } else {
-            _hasMarketPrice = NO;
-        }
-        
-        if (marketPrice == price) {
-            _hasMarketPrice = NO;
-        } else {
-            _hasMarketPrice = YES;
-        }
-        
-        _marketPriceLabel.hidden = !_hasMarketPrice;
+- (void)setGoods:(LBGoodsModel *)goods{
+    
+    if (goods.price != nil && goods.price.length != 0) {
+        _priceLabel.text = [NSString stringWithFormat:@"¥ %@",goods.price];
+        [_priceLabel sizeToFit];
     }
-    return self;
+    if (goods.market_price != nil && goods.market_price.length != 0) {
+        _marketPriceLabel.text = [NSString stringWithFormat:@"¥ %@",goods.market_price];
+        _hasMarketPrice = YES;
+        [_marketPriceLabel sizeToFit];
+    } else {
+        _hasMarketPrice = NO;
+    }
+    
+    if (goods.market_price == goods.price) {
+        _hasMarketPrice = NO;
+    } else {
+        _hasMarketPrice = YES;
+    }
+    
+    _marketPriceLabel.hidden = !_hasMarketPrice;
 }
-
 
 
 // 设置子控件frame

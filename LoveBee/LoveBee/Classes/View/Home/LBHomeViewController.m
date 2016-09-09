@@ -8,8 +8,11 @@
 
 #import "LBHomeViewController.h"
 #import "LBHomeCell.h"
+#import "LBHomeViewModel.h"
 
 @interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong) LBHomeViewModel *viewModel;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -24,7 +27,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
-        flowLayout.itemSize = CGSizeMake(kScreenWidth* 0.5 - 20, kScreenHeigth * 0.3 + 50);
+        flowLayout.itemSize = CGSizeMake(kScreenWidth* 0.5 - 20, kScreenHeigth * 0.3 + 40);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
@@ -44,19 +47,50 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // 请求数据
+    [self loadFreshData];
     
 }
 
+#pragma mark -全局的方法
+- (void)loadFreshData{
+    
+    self.viewModel = [[LBHomeViewModel alloc]init];
+    [self.viewModel loadFreshHotDataWithSuccess:^(NSDictionary * response) {
+        
+        NSArray *data = response[@"data"];
+        
+        NSMutableArray *mArr = [NSMutableArray array];
+        [data enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            LBGoodsModel *model = [LBGoodsModel goodsWithDict:obj];
+            [mArr addObject:model];
+        }];
+        self.viewModel.dataArray = mArr;
+        [self.collectionView reloadData];
+        
+    } failure:^(NSError *error) {
+        if (error) {
+            NSLog(@"获取新鲜热卖信息失败");
+        }
+    }];
+    
+    
+}
+
+#pragma mark -UICollectionDelegate
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
+    return _viewModel.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     LBHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.goods = self.viewModel.dataArray[indexPath.item];
     
     [cell layoutIfNeeded];
     

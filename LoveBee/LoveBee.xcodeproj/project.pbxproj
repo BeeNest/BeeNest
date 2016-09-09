@@ -23,7 +23,8 @@
 		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 		E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098E1D8157AF003934D4 /* LBHomeViewController.m */; };
 		E35509951D824CAC003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509941D824CAC003934D4 /* LBPriceView.m */; };
-		E35509971D825E0B003934D4 /* LBHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35509961D825E0B003934D4 /* LBHomeCell.xib */; };
+		E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A11D829267003934D4 /* LBHomeViewModel.m */; };
+		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,10 @@
 		E355098E1D8157AF003934D4 /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
 		E35509931D824CAC003934D4 /* LBPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPriceView.h; sourceTree = "<group>"; };
 		E35509941D824CAC003934D4 /* LBPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPriceView.m; sourceTree = "<group>"; };
-		E35509961D825E0B003934D4 /* LBHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeCell.xib; sourceTree = "<group>"; };
+		E35509A01D829267003934D4 /* LBHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewModel.h; sourceTree = "<group>"; };
+		E35509A11D829267003934D4 /* LBHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewModel.m; sourceTree = "<group>"; };
+		E35509A31D829FD4003934D4 /* LBGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGoodsModel.h; sourceTree = "<group>"; };
+		E35509A41D829FD4003934D4 /* LBGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGoodsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,18 +93,13 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		2371A5FC1D815A6700F326C3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2371A5FD1D815A6700F326C3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				2371A6071D81882400F326C3 /* LBSuperLeftTableViewModel.h */,
 				2371A6081D81882400F326C3 /* LBSuperLeftTableViewModel.m */,
+				E35509A01D829267003934D4 /* LBHomeViewModel.h */,
+				E35509A11D829267003934D4 /* LBHomeViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,7 +169,7 @@
 				23FA60FF1D80F987009B928F /* View */,
 				2371A5FA1D815A6700F326C3 /* Commom */,
 				2371A5FB1D815A6700F326C3 /* Lib */,
-				2371A5FC1D815A6700F326C3 /* Model */,
+				E355099B1D82690D003934D4 /* Model */,
 				2371A5FD1D815A6700F326C3 /* ViewModel */,
 			);
 			path = Classes;
@@ -197,7 +196,6 @@
 				E355098E1D8157AF003934D4 /* LBHomeViewController.m */,
 				E355098A1D814B99003934D4 /* LBHomeCell.h */,
 				E355098B1D814B99003934D4 /* LBHomeCell.m */,
-				E35509961D825E0B003934D4 /* LBHomeCell.xib */,
 				E35509931D824CAC003934D4 /* LBPriceView.h */,
 				E35509941D824CAC003934D4 /* LBPriceView.m */,
 			);
@@ -251,6 +249,23 @@
 				6727408D407E81D97B8A6929 /* libPods-LoveBee.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E355099B1D82690D003934D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E355099C1D82690D003934D4 /* Home */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E355099C1D82690D003934D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E35509A31D829FD4003934D4 /* LBGoodsModel.h */,
+				E35509A41D829FD4003934D4 /* LBGoodsModel.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35509971D825E0B003934D4 /* LBHomeCell.xib in Resources */,
 				23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */,
 				2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */,
 				23FA611A1D81001D009B928F /* Me.storyboard in Resources */,
@@ -383,8 +397,10 @@
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
+				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
+				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
