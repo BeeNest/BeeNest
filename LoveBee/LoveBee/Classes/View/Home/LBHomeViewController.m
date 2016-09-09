@@ -16,10 +16,13 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+
+
 @end
 
 @implementation LBHomeViewController
 
+#pragma mark - 懒加载
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
@@ -27,7 +30,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
-        flowLayout.itemSize = CGSizeMake(kScreenWidth* 0.5 - 20, kScreenHeigth * 0.3 + 40);
+        flowLayout.itemSize = CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
@@ -45,7 +48,7 @@
     
     [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"cell"];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
     
     // 请求数据
     [self loadFreshData];

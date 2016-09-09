@@ -41,7 +41,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.backgroundColor = [UIColor whiteColor];
         [self setupUI];
     }
     return self;
@@ -59,6 +59,7 @@
     self.goodsNameLabel.font = [UIFont systemFontOfSize:14];
     self.goodsNameLabel.textColor = [UIColor blackColor];
     self.goodsNameLabel.textAlignment = NSTextAlignmentLeft;
+    self.goodsNameLabel.numberOfLines = 1;
     self.fineImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jingxuan.png"]];
     self.giveImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buyOne.png"]];
     self.specificsLabel = [[UILabel alloc]init];
@@ -79,13 +80,13 @@
     // 添加约束
     __weak typeof(self) weakSelf = self;
     [weakSelf.goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.leading.trailing.mas_equalTo(weakSelf);
         make.top.leading.trailing.equalTo(self);
         make.height.width.equalTo(self.mas_width);
     }];
     [weakSelf.goodsNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
-        make.leading.trailing.mas_equalTo(weakSelf).mas_offset(10);
+        make.leading.mas_equalTo(weakSelf).mas_offset(10);
+        make.trailing.mas_equalTo(weakSelf).mas_offset(-10);
         make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -93,7 +94,6 @@
         make.leading.equalTo(_goodsNameLabel);
         make.width.mas_equalTo(25);
         make.height.mas_equalTo(13);
-//        make.height.mas_equalTo(15);
     }];
     [weakSelf.giveImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_fineImageView);

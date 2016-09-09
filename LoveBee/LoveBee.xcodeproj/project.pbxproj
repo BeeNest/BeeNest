@@ -25,6 +25,7 @@
 		E35509951D824CAC003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509941D824CAC003934D4 /* LBPriceView.m */; };
 		E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A11D829267003934D4 /* LBHomeViewModel.m */; };
 		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
+		E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A71D82D4BB003934D4 /* LBBuyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		E35509A11D829267003934D4 /* LBHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewModel.m; sourceTree = "<group>"; };
 		E35509A31D829FD4003934D4 /* LBGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGoodsModel.h; sourceTree = "<group>"; };
 		E35509A41D829FD4003934D4 /* LBGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGoodsModel.m; sourceTree = "<group>"; };
+		E35509A61D82D4BB003934D4 /* LBBuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBuyView.h; sourceTree = "<group>"; };
+		E35509A71D82D4BB003934D4 /* LBBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBuyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				E355098B1D814B99003934D4 /* LBHomeCell.m */,
 				E35509931D824CAC003934D4 /* LBPriceView.h */,
 				E35509941D824CAC003934D4 /* LBPriceView.m */,
+				E35509A61D82D4BB003934D4 /* LBBuyView.h */,
+				E35509A71D82D4BB003934D4 /* LBBuyView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
+				E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */,
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
