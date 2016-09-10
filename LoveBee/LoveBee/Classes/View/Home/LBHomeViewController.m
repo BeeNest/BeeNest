@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-
-
 @end
 
 @implementation LBHomeViewController

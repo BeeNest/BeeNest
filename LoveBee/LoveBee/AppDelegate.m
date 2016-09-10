@@ -40,7 +40,7 @@
 - (UIViewController*)pickViewController
 {
     // 判断 沙盒和当前的版本号是否一致
-    if (![[self loadSavedAppVersion] isEqualToString:[self loadAppVersion]]) {
+    if ([[self loadSavedAppVersion] isEqualToString:[self loadAppVersion]]) {
         // 一致,应该显示tabbar
         // 创建tabbarController
         LBTabBarController* tab = [[LBTabBarController alloc] init];
