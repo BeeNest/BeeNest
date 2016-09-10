@@ -51,7 +51,7 @@
     
     _numberLabel = [[UILabel alloc]init];
     _numberLabel.text = @"0";
-    _numberLabel.font = [UIFont systemFontOfSize:14];
+    _numberLabel.font = [UIFont systemFontOfSize:12];
     _numberLabel.textAlignment = NSTextAlignmentCenter;
     _numberLabel.hidden = YES;
     [self addSubview:_numberLabel];
@@ -70,9 +70,9 @@
         make.width.mas_equalTo(self.mas_height);
     }];
     [_numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(_cutButton.mas_trailing).mas_offset(3);
+        make.leading.mas_equalTo(_cutButton.mas_trailing).mas_offset(5);
         make.top.bottom.mas_equalTo(self);
-        make.trailing.mas_equalTo(_addButton.mas_leading).mas_offset(-2);
+        make.trailing.mas_equalTo(_addButton.mas_leading).mas_offset(-4);
     }];
     [_addButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.trailing.bottom.mas_equalTo(self);

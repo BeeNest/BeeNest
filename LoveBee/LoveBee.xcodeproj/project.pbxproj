@@ -100,7 +100,7 @@
 		E355098D1D8157AF003934D4 /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		E355098E1D8157AF003934D4 /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
 		E35509931D824CAC003934D4 /* LBPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPriceView.h; sourceTree = "<group>"; };
-		E35509941D824CAC003934D4 /* LBPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPriceView.m; sourceTree = "<group>"; };
+		E35509941D824CAC003934D4 /* LBPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 1; path = LBPriceView.m; sourceTree = "<group>"; };
 		E35509A01D829267003934D4 /* LBHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewModel.h; sourceTree = "<group>"; };
 		E35509A11D829267003934D4 /* LBHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewModel.m; sourceTree = "<group>"; };
 		E35509A31D829FD4003934D4 /* LBGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGoodsModel.h; sourceTree = "<group>"; };

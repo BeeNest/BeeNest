@@ -98,8 +98,8 @@
     }];
     [weakSelf.goodsNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
-        make.leading.mas_equalTo(weakSelf).mas_offset(10);
-        make.trailing.mas_equalTo(weakSelf).mas_offset(-10);
+        make.leading.mas_equalTo(weakSelf).mas_offset(5);
+        make.trailing.mas_equalTo(weakSelf).mas_offset(-5);
         make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -110,7 +110,7 @@
     }];
     [weakSelf.giveImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_fineImageView);
-        make.leading.equalTo(_fineImageView.mas_trailing).offset(10);
+        make.leading.equalTo(_fineImageView.mas_trailing).offset(5);
         make.width.mas_equalTo(30);
         make.height.mas_equalTo(13);
     }];
@@ -128,7 +128,7 @@
     [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.bottom.mas_equalTo(weakSelf).mas_offset(-2);
         make.height.mas_equalTo(20);
-        make.width.mas_equalTo(65);
+//        make.width.mas_equalTo(65);
     }];
     
 }
