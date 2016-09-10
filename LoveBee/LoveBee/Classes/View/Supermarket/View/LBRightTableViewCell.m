@@ -121,6 +121,7 @@
     self.lineView.backgroundColor = self.market_priceLabel.textColor;
     
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
+
     [self.addBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     self.addBtn.tag = 1001;
 
