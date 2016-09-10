@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LBTabBarController.h"
+#import "LBGuideCollectionViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,19 +17,69 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
     
     _window = [[UIWindow alloc]initWithFrame:kScreenBounds];
     _window.backgroundColor = [UIColor whiteColor];
-    _window.rootViewController = [LBTabBarController new];
+    //    _window.rootViewController = [LBTabBarController new];
+    // 设置跟控制器
+    self.window.rootViewController = [self pickViewController];
+    
     [_window makeKeyAndVisible];
-   
+    
+    // 把当前的版本号保存到沙盒中
+    [self saveAppVersion];
     
     
     return YES;
 }
+// 选择应该显示的控制器
+- (UIViewController*)pickViewController
+{
+    // 判断 沙盒和当前的版本号是否一致
+    if (![[self loadSavedAppVersion] isEqualToString:[self loadAppVersion]]) {
+        // 一致,应该显示tabbar
+        // 创建tabbarController
+        LBTabBarController* tab = [[LBTabBarController alloc] init];
+        return tab;
+    }
+    else {
+        // 不一致,显示新特性页面(引导页)
+        LBGuideCollectionViewController* guide = [[LBGuideCollectionViewController alloc] init];
+        return guide;
+    }
+}
+
+// 获取沙盒中保存的版本号
+- (NSString*)loadSavedAppVersion
+{
+    // 获取ud对象
+    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+    return [ud objectForKey:@"appVersion"];
+}
+
+// 把当前的版本号保存到沙盒当中
+- (void)saveAppVersion
+{
+    // 获取info.plist
+    NSDictionary* dict = [NSBundle mainBundle].infoDictionary;
+    // 获取ud对象
+    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:dict[@"CFBundleShortVersionString"] forKey:@"appVersion"];
+}
+
+// 获取"当前"的版本号
+- (NSString*)loadAppVersion
+{
+    // 获取info.plist
+    NSDictionary* dict = [NSBundle mainBundle].infoDictionary;
+    NSLog(@"%@", dict[@"CFBundleShortVersionString"]);
+    return dict[@"CFBundleShortVersionString"];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -1,0 +1,12 @@
+//
+//  PrefixHeader.pch
+//  彩票
+//
+//  Created by apple on 15/10/31.
+//  Copyright (c) 2015年 1. All rights reserved.
+//
+
+
+#define kScreenSize [UIScreen mainScreen].bounds
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height

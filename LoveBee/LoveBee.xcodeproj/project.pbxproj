@@ -21,6 +21,20 @@
 		23FA61181D81000C009B928F /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61171D81000C009B928F /* Shopping.storyboard */; };
 		23FA611A1D81001D009B928F /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61191D81001D009B928F /* Me.storyboard */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
+		CD1DB3A01D83B1C30065C43F /* LBgoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB38F1D83B1C30065C43F /* LBgoodsViewController.m */; };
+		CD1DB3A11D83B1C30065C43F /* LBMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3911D83B1C30065C43F /* LBMeCell.m */; };
+		CD1DB3A21D83B1C30065C43F /* LBMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB3921D83B1C30065C43F /* LBMeCell.xib */; };
+		CD1DB3A31D83B1C30065C43F /* LBMeFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3941D83B1C30065C43F /* LBMeFourCell.m */; };
+		CD1DB3A41D83B1C30065C43F /* LBMeFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB3951D83B1C30065C43F /* LBMeFourCell.xib */; };
+		CD1DB3A51D83B1C30065C43F /* LBMeorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3971D83B1C30065C43F /* LBMeorderViewController.m */; };
+		CD1DB3A61D83B1C30065C43F /* LBMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3991D83B1C30065C43F /* LBMeTableViewController.m */; };
+		CD1DB3A71D83B1C30065C43F /* LBMeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB39B1D83B1C30065C43F /* LBMeTwoCell.m */; };
+		CD1DB3A81D83B1C30065C43F /* LBMeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB39C1D83B1C30065C43F /* LBMeTwoCell.xib */; };
+		CD1DB3A91D83B1C30065C43F /* LBThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB39E1D83B1C30065C43F /* LBThreeCell.m */; };
+		CD1DB3AA1D83B1C30065C43F /* LBThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB39F1D83B1C30065C43F /* LBThreeCell.xib */; };
+		CD1DB3B41D83B25E0065C43F /* LBGuideCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3AD1D83B25E0065C43F /* LBGuideCollectionViewController.m */; };
+		CD1DB3B51D83B25E0065C43F /* LBGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3B31D83B25E0065C43F /* LBGuideCell.m */; };
+		CD1DB3B81D83B2C70065C43F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3B71D83B2C70065C43F /* UIView+Frame.m */; };
 		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 		E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098E1D8157AF003934D4 /* LBHomeViewController.m */; };
 		E35509951D824CAC003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509941D824CAC003934D4 /* LBPriceView.m */; };
@@ -56,6 +70,31 @@
 		23FA61191D81001D009B928F /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		6727408D407E81D97B8A6929 /* libPods-LoveBee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveBee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC67DAE5FAE794132970D32 /* Pods-LoveBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.release.xcconfig"; sourceTree = "<group>"; };
+		CD1DB38E1D83B1C30065C43F /* LBgoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBgoodsViewController.h; sourceTree = "<group>"; };
+		CD1DB38F1D83B1C30065C43F /* LBgoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBgoodsViewController.m; sourceTree = "<group>"; };
+		CD1DB3901D83B1C30065C43F /* LBMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeCell.h; sourceTree = "<group>"; };
+		CD1DB3911D83B1C30065C43F /* LBMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeCell.m; sourceTree = "<group>"; };
+		CD1DB3921D83B1C30065C43F /* LBMeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeCell.xib; sourceTree = "<group>"; };
+		CD1DB3931D83B1C30065C43F /* LBMeFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeFourCell.h; sourceTree = "<group>"; };
+		CD1DB3941D83B1C30065C43F /* LBMeFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeFourCell.m; sourceTree = "<group>"; };
+		CD1DB3951D83B1C30065C43F /* LBMeFourCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeFourCell.xib; sourceTree = "<group>"; };
+		CD1DB3961D83B1C30065C43F /* LBMeorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeorderViewController.h; sourceTree = "<group>"; };
+		CD1DB3971D83B1C30065C43F /* LBMeorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeorderViewController.m; sourceTree = "<group>"; };
+		CD1DB3981D83B1C30065C43F /* LBMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeTableViewController.h; sourceTree = "<group>"; };
+		CD1DB3991D83B1C30065C43F /* LBMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeTableViewController.m; sourceTree = "<group>"; };
+		CD1DB39A1D83B1C30065C43F /* LBMeTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeTwoCell.h; sourceTree = "<group>"; };
+		CD1DB39B1D83B1C30065C43F /* LBMeTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeTwoCell.m; sourceTree = "<group>"; };
+		CD1DB39C1D83B1C30065C43F /* LBMeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeTwoCell.xib; sourceTree = "<group>"; };
+		CD1DB39D1D83B1C30065C43F /* LBThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBThreeCell.h; sourceTree = "<group>"; };
+		CD1DB39E1D83B1C30065C43F /* LBThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBThreeCell.m; sourceTree = "<group>"; };
+		CD1DB39F1D83B1C30065C43F /* LBThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBThreeCell.xib; sourceTree = "<group>"; };
+		CD1DB3AC1D83B25E0065C43F /* LBGuideCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCollectionViewController.h; sourceTree = "<group>"; };
+		CD1DB3AD1D83B25E0065C43F /* LBGuideCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCollectionViewController.m; sourceTree = "<group>"; };
+		CD1DB3AE1D83B25E0065C43F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CD1DB3B21D83B25E0065C43F /* LBGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCell.h; sourceTree = "<group>"; };
+		CD1DB3B31D83B25E0065C43F /* LBGuideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCell.m; sourceTree = "<group>"; };
+		CD1DB3B61D83B2C70065C43F /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		CD1DB3B71D83B2C70065C43F /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E355098A1D814B99003934D4 /* LBHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCell.h; sourceTree = "<group>"; };
 		E355098B1D814B99003934D4 /* LBHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		E355098D1D8157AF003934D4 /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
@@ -87,6 +126,8 @@
 			children = (
 				2371A6041D815C7200F326C3 /* AFHTTPTool.h */,
 				2371A6051D815C7200F326C3 /* AFHTTPTool.m */,
+				CD1DB3B61D83B2C70065C43F /* UIView+Frame.h */,
+				CD1DB3B71D83B2C70065C43F /* UIView+Frame.m */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -232,6 +273,24 @@
 		23FA61021D80F987009B928F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CD1DB38E1D83B1C30065C43F /* LBgoodsViewController.h */,
+				CD1DB38F1D83B1C30065C43F /* LBgoodsViewController.m */,
+				CD1DB3901D83B1C30065C43F /* LBMeCell.h */,
+				CD1DB3911D83B1C30065C43F /* LBMeCell.m */,
+				CD1DB3921D83B1C30065C43F /* LBMeCell.xib */,
+				CD1DB3931D83B1C30065C43F /* LBMeFourCell.h */,
+				CD1DB3941D83B1C30065C43F /* LBMeFourCell.m */,
+				CD1DB3951D83B1C30065C43F /* LBMeFourCell.xib */,
+				CD1DB3961D83B1C30065C43F /* LBMeorderViewController.h */,
+				CD1DB3971D83B1C30065C43F /* LBMeorderViewController.m */,
+				CD1DB3981D83B1C30065C43F /* LBMeTableViewController.h */,
+				CD1DB3991D83B1C30065C43F /* LBMeTableViewController.m */,
+				CD1DB39A1D83B1C30065C43F /* LBMeTwoCell.h */,
+				CD1DB39B1D83B1C30065C43F /* LBMeTwoCell.m */,
+				CD1DB39C1D83B1C30065C43F /* LBMeTwoCell.xib */,
+				CD1DB39D1D83B1C30065C43F /* LBThreeCell.h */,
+				CD1DB39E1D83B1C30065C43F /* LBThreeCell.m */,
+				CD1DB39F1D83B1C30065C43F /* LBThreeCell.xib */,
 				23FA61191D81001D009B928F /* Me.storyboard */,
 			);
 			path = Profile;
@@ -248,6 +307,10 @@
 		23FA61061D80FA56009B928F /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				CD1DB3AB1D83B25E0065C43F /* Controller */,
+				CD1DB3AF1D83B25E0065C43F /* Model */,
+				CD1DB3B01D83B25E0065C43F /* Other */,
+				CD1DB3B11D83B25E0065C43F /* View */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -268,6 +331,43 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		CD1DB3AB1D83B25E0065C43F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD1DB3AC1D83B25E0065C43F /* LBGuideCollectionViewController.h */,
+				CD1DB3AD1D83B25E0065C43F /* LBGuideCollectionViewController.m */,
+				CD1DB3AE1D83B25E0065C43F /* PrefixHeader.pch */,
+			);
+			name = Controller;
+			path = LoveBee/Classes/View/Gudie/Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		CD1DB3AF1D83B25E0065C43F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = LoveBee/Classes/View/Gudie/Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		CD1DB3B01D83B25E0065C43F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Other;
+			path = LoveBee/Classes/View/Gudie/Other;
+			sourceTree = SOURCE_ROOT;
+		};
+		CD1DB3B11D83B25E0065C43F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD1DB3B21D83B25E0065C43F /* LBGuideCell.h */,
+				CD1DB3B31D83B25E0065C43F /* LBGuideCell.m */,
+			);
+			name = View;
+			path = LoveBee/Classes/View/Gudie/View;
+			sourceTree = SOURCE_ROOT;
 		};
 		E355099B1D82690D003934D4 /* Model */ = {
 			isa = PBXGroup;
@@ -349,8 +449,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */,
+				CD1DB3A41D83B1C30065C43F /* LBMeFourCell.xib in Resources */,
+				CD1DB3A81D83B1C30065C43F /* LBMeTwoCell.xib in Resources */,
+				CD1DB3AA1D83B1C30065C43F /* LBThreeCell.xib in Resources */,
 				2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */,
 				23FA611A1D81001D009B928F /* Me.storyboard in Resources */,
+				CD1DB3A21D83B1C30065C43F /* LBMeCell.xib in Resources */,
 				23FA61181D81000C009B928F /* Shopping.storyboard in Resources */,
 				23FA61141D80FFCE009B928F /* Home.storyboard in Resources */,
 			);
@@ -411,18 +515,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1DB3B81D83B2C70065C43F /* UIView+Frame.m in Sources */,
 				237D56991D82EBEE00AEB636 /* LBRightTableViewCell.m in Sources */,
+				CD1DB3B41D83B25E0065C43F /* LBGuideCollectionViewController.m in Sources */,
+				CD1DB3B51D83B25E0065C43F /* LBGuideCell.m in Sources */,
 				2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */,
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
+				CD1DB3A91D83B1C30065C43F /* LBThreeCell.m in Sources */,
+				CD1DB3A11D83B1C30065C43F /* LBMeCell.m in Sources */,
 				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
+				CD1DB3A61D83B1C30065C43F /* LBMeTableViewController.m in Sources */,
+				CD1DB3A51D83B1C30065C43F /* LBMeorderViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
+				CD1DB3A71D83B1C30065C43F /* LBMeTwoCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
+				CD1DB3A31D83B1C30065C43F /* LBMeFourCell.m in Sources */,
+				CD1DB3A01D83B1C30065C43F /* LBgoodsViewController.m in Sources */,
 				E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */,
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
 			);
