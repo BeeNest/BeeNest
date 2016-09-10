@@ -12,7 +12,7 @@
 #import "UIView+Frame.h"
 @interface LBGuideCollectionViewController ()
 @property (weak, nonatomic) UIPageControl *pageControl;
-
+@property (weak, nonatomic)UIButton* enterBtn;
 @end
 
 @implementation LBGuideCollectionViewController
@@ -71,9 +71,9 @@ static NSString * const reuseIdentifier = @"Cell";
          pageControl.bounds = CGRectMake(0, 0, 150, 50);
          pageControl.numberOfPages = 4; // 一共显示多少个圆点（多少页）
          // 设置非选中页的圆点颜色
-         pageControl.pageIndicatorTintColor = [UIColor redColor];
+         pageControl.pageIndicatorTintColor = [UIColor orangeColor];
          // 设置选中页的圆点颜色
-         pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+         pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     
          // 禁止默认的点击功能
          pageControl.enabled = NO;
@@ -81,7 +81,7 @@ static NSString * const reuseIdentifier = @"Cell";
          [self.view addSubview:pageControl];
          _pageControl = pageControl;
     // 创建一个进入按钮
-    UIButton* enterBtn = [[UIButton alloc] init];
+     UIButton * enterBtn =[[UIButton alloc]init];
     [enterBtn setBackgroundImage:[UIImage imageNamed:@"icon_next"] forState:UIControlStateNormal];
     [enterBtn sizeToFit];
     enterBtn.x = 3 * kScreenWidth + (kScreenWidth - enterBtn.w) * 0.5;
@@ -90,7 +90,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [enterBtn addTarget:self action:@selector(enter) forControlEvents:UIControlEventTouchUpInside];
     
     [self.collectionView addSubview:enterBtn];
-
+    self.enterBtn = enterBtn;
+    enterBtn= self.enterBtn;
 }
 // 点击进入按钮的点击事件
 - (void)enter
@@ -121,18 +122,29 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 把数据传给cell
     cell.image = image;
-    if (indexPath.row == 3) {
-        self.pageControl.alpha = 0;
-    }
+   
     return cell;
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     int page =  self.collectionView.contentOffset.x / self.view.frame.size.width;
     //    NSLog(@"%d", page);
-    
+    if (self.collectionView.contentOffset.x / self.view.frame.size.width != 2) {
+        _enterBtn.hidden = YES;
+    }
+    if (self.collectionView.contentOffset.x / self.view.frame.size.width == 3) {
+        
+        _enterBtn.hidden = NO;
+          }
+    [self.collectionView reloadData];
+
     // 设置页码
     _pageControl.currentPage = page;
 }
+-(void) viewWillAppear:(BOOL)animated{
+//    //隐藏导航栏
+//    self.navigationController.navigationBar.hidden = YES;
+}
+
 
 // 随机颜色
 - (UIColor*)randomColor

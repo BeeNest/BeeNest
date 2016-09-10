@@ -307,7 +307,7 @@
             cell.button3label.font =[UIFont systemFontOfSize:13];
             cell.button3label.textAlignment = YES;
 
-            cell.button4image.image = [UIImage imageNamed:@"v2_my_feedback_icon"];
+            cell.button4image.image = [UIImage imageNamed:@"v2_my_feedback_icon-1"];
             cell.button4label.text = @"客服/反馈";
             cell.button4label.font =[UIFont systemFontOfSize:13];
             cell.button4label.textAlignment = YES;
