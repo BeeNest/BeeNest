@@ -16,9 +16,14 @@ typedef enum : NSInteger {
 
 @interface LBHomeCell : UICollectionViewCell
 
+/// 商品模型
 @property (nonatomic, strong) LBGoodsModel *goods;
+
 
 /// cell类型
 @property (nonatomic, assign) LBHomeCellType cellType;
+
+/// 活动背景图片
+@property (nonatomic, strong) UIImageView *backImageView;
 
 @end

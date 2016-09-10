@@ -14,9 +14,6 @@
 
 @interface LBHomeCell ()
 
-/// 背景图片
-@property (nonatomic, strong) UIImageView *backImageView;
-
 /// 商品图片
 @property (nonatomic, strong) UIImageView *goodsImageView;
 
@@ -99,17 +96,17 @@
     // 添加约束
     __weak typeof(self) weakSelf = self;
     [weakSelf.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self);
+        make.edges.mas_equalTo(weakSelf);
     }];
     [weakSelf.goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.leading.trailing.equalTo(self);
-        make.height.width.equalTo(self.mas_width);
+        make.top.leading.trailing.equalTo(weakSelf);
+        make.height.equalTo(weakSelf.mas_width);
     }];
     [weakSelf.goodsNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
         make.leading.mas_equalTo(weakSelf).mas_offset(5);
         make.trailing.mas_equalTo(weakSelf).mas_offset(-5);
-        make.height.mas_equalTo(20);
+//        make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_goodsNameLabel.mas_bottom).offset(3);
@@ -128,10 +125,9 @@
         make.leading.equalTo(_goodsNameLabel);
     }];
     [weakSelf.priceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(weakSelf.specificsLabel);
+        make.leading.mas_equalTo(_goodsNameLabel);
         make.top.mas_equalTo(weakSelf.specificsLabel.mas_bottom);
-        make.trailing.mas_equalTo(weakSelf);
-        make.bottom.mas_equalTo(weakSelf);
+        make.bottom.mas_equalTo(weakSelf).mas_offset(5);
     }];
     
     [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -145,7 +141,7 @@
 - (void)setCellType:(LBHomeCellType)cellType{
     _cellType = cellType;
     if (cellType == LBHomeCellTypeVertical) {
-        self.backImageView.image = [UIImage imageNamed:@"v2_placeholder_full_size"];
+//        self.backImageView.image = [UIImage imageNamed:@"v2_placeholder_full_size"];
         self.goods = nil;
     }
 }
