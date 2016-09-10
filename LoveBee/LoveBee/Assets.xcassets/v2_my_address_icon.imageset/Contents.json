@@ -11,6 +11,10 @@
     },
     {
       "idiom" : "universal",
+<<<<<<< Updated upstream
+=======
+      "filename" : "v2_my_address_icon@3x.png",
+>>>>>>> Stashed changes
       "scale" : "3x"
     }
   ],

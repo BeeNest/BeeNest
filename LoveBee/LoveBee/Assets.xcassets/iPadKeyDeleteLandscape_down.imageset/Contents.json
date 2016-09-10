@@ -2,19 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "iPadKeyDeleteLandscape_down.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "v2_my_feedback_icon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-<<<<<<< Updated upstream
-=======
-      "filename" : "v2_my_feedback_icon@3x.png",
->>>>>>> Stashed changes
       "scale" : "3x"
     }
   ],

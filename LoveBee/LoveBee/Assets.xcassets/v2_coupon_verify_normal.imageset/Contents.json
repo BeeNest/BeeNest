@@ -5,6 +5,23 @@
       "scale" : "1x"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 32,
+          "top" : 30,
+          "right" : 51,
+          "left" : 59
+        }
+      },
+>>>>>>> Stashed changes
       "idiom" : "universal",
       "filename" : "v2_coupon_verify_normal@2x.png",
       "scale" : "2x"

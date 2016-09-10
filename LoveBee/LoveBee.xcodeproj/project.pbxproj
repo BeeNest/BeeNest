@@ -21,12 +21,29 @@
 		23FA61181D81000C009B928F /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61171D81000C009B928F /* Shopping.storyboard */; };
 		23FA611A1D81001D009B928F /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FA61191D81001D009B928F /* Me.storyboard */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
+<<<<<<< Updated upstream
 		E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098B1D814B99003934D4 /* LBHomeCell.m */; };
 		E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E355098E1D8157AF003934D4 /* LBHomeViewController.m */; };
 		E35509951D824CAC003934D4 /* LBPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509941D824CAC003934D4 /* LBPriceView.m */; };
 		E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A11D829267003934D4 /* LBHomeViewModel.m */; };
 		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
 		E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A71D82D4BB003934D4 /* LBBuyView.m */; };
+=======
+		CD0BB2871D81568D0046C278 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0BB2861D81568D0046C278 /* UIView+Frame.m */; };
+		CD0BB2901D8187F10046C278 /* LBgoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0BB28E1D8187F10046C278 /* LBgoodsViewController.m */; };
+		CD1DB3791D829E3D0065C43F /* LBMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3771D829E3D0065C43F /* LBMeCell.m */; };
+		CD1DB37A1D829E3D0065C43F /* LBMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB3781D829E3D0065C43F /* LBMeCell.xib */; };
+		CD1DB37E1D82AB440065C43F /* LBMeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB37C1D82AB440065C43F /* LBMeTwoCell.m */; };
+		CD1DB37F1D82AB440065C43F /* LBMeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB37D1D82AB440065C43F /* LBMeTwoCell.xib */; };
+		CD1DB3831D82BA490065C43F /* LBThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3811D82BA490065C43F /* LBThreeCell.m */; };
+		CD1DB3841D82BA490065C43F /* LBThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB3821D82BA490065C43F /* LBThreeCell.xib */; };
+		CD1DB3881D82E1400065C43F /* LBMeorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB3871D82E1400065C43F /* LBMeorderViewController.m */; };
+		CD1DB38C1D8398F70065C43F /* LBMeFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DB38A1D8398F70065C43F /* LBMeFourCell.m */; };
+		CD1DB38D1D8398F70065C43F /* LBMeFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1DB38B1D8398F70065C43F /* LBMeFourCell.xib */; };
+		CDDF72071D813E1C00A19970 /* LBMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDF72061D813E1C00A19970 /* LBMeTableViewController.m */; };
+		CDDF72151D81440E00A19970 /* LBGuideCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDF72141D81440E00A19970 /* LBGuideCollectionViewController.m */; };
+		CDDF72191D8145C100A19970 /* LBGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDF72181D8145C100A19970 /* LBGuideCell.m */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +73,7 @@
 		23FA61191D81001D009B928F /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		6727408D407E81D97B8A6929 /* libPods-LoveBee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveBee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC67DAE5FAE794132970D32 /* Pods-LoveBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		E355098A1D814B99003934D4 /* LBHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCell.h; sourceTree = "<group>"; };
 		E355098B1D814B99003934D4 /* LBHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		E355098D1D8157AF003934D4 /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
@@ -68,6 +86,33 @@
 		E35509A41D829FD4003934D4 /* LBGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGoodsModel.m; sourceTree = "<group>"; };
 		E35509A61D82D4BB003934D4 /* LBBuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBuyView.h; sourceTree = "<group>"; };
 		E35509A71D82D4BB003934D4 /* LBBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBuyView.m; sourceTree = "<group>"; };
+=======
+		CD0BB2851D81568D0046C278 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		CD0BB2861D81568D0046C278 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		CD0BB28D1D8187F10046C278 /* LBgoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBgoodsViewController.h; sourceTree = "<group>"; };
+		CD0BB28E1D8187F10046C278 /* LBgoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBgoodsViewController.m; sourceTree = "<group>"; };
+		CD1DB3761D829E3D0065C43F /* LBMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeCell.h; sourceTree = "<group>"; };
+		CD1DB3771D829E3D0065C43F /* LBMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeCell.m; sourceTree = "<group>"; };
+		CD1DB3781D829E3D0065C43F /* LBMeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeCell.xib; sourceTree = "<group>"; };
+		CD1DB37B1D82AB440065C43F /* LBMeTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeTwoCell.h; sourceTree = "<group>"; };
+		CD1DB37C1D82AB440065C43F /* LBMeTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeTwoCell.m; sourceTree = "<group>"; };
+		CD1DB37D1D82AB440065C43F /* LBMeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeTwoCell.xib; sourceTree = "<group>"; };
+		CD1DB3801D82BA490065C43F /* LBThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBThreeCell.h; sourceTree = "<group>"; };
+		CD1DB3811D82BA490065C43F /* LBThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBThreeCell.m; sourceTree = "<group>"; };
+		CD1DB3821D82BA490065C43F /* LBThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBThreeCell.xib; sourceTree = "<group>"; };
+		CD1DB3861D82E1400065C43F /* LBMeorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeorderViewController.h; sourceTree = "<group>"; };
+		CD1DB3871D82E1400065C43F /* LBMeorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeorderViewController.m; sourceTree = "<group>"; };
+		CD1DB3891D8398F70065C43F /* LBMeFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeFourCell.h; sourceTree = "<group>"; };
+		CD1DB38A1D8398F70065C43F /* LBMeFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeFourCell.m; sourceTree = "<group>"; };
+		CD1DB38B1D8398F70065C43F /* LBMeFourCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBMeFourCell.xib; sourceTree = "<group>"; };
+		CDDF72051D813E1C00A19970 /* LBMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMeTableViewController.h; sourceTree = "<group>"; };
+		CDDF72061D813E1C00A19970 /* LBMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMeTableViewController.m; sourceTree = "<group>"; };
+		CDDF72131D81440E00A19970 /* LBGuideCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCollectionViewController.h; sourceTree = "<group>"; };
+		CDDF72141D81440E00A19970 /* LBGuideCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCollectionViewController.m; sourceTree = "<group>"; };
+		CDDF72161D81451F00A19970 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Classes/View/Gudie/Controller/PrefixHeader.pch; sourceTree = "<group>"; };
+		CDDF72171D8145C100A19970 /* LBGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCell.h; sourceTree = "<group>"; };
+		CDDF72181D8145C100A19970 /* LBGuideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCell.m; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +208,9 @@
 				23FA60FB1D80F987009B928F /* Classes */,
 				23E820D61D80F42A007A7205 /* AppDelegate.h */,
 				23E820D71D80F42A007A7205 /* AppDelegate.m */,
+				CDDF72161D81451F00A19970 /* PrefixHeader.pch */,
+				CD0BB2851D81568D0046C278 /* UIView+Frame.h */,
+				CD0BB2861D81568D0046C278 /* UIView+Frame.m */,
 				23E820DF1D80F42A007A7205 /* Assets.xcassets */,
 				23E820E41D80F42A007A7205 /* Info.plist */,
 				23E820D31D80F42A007A7205 /* Supporting Files */,
@@ -194,6 +242,7 @@
 		23FA60FF1D80F987009B928F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CDDF72081D8143C400A19970 /* Gudie */,
 				23FA61011D80F987009B928F /* Main */,
 				23FA61061D80FA56009B928F /* Guide */,
 				23FA61001D80F987009B928F /* Home */,
@@ -233,6 +282,13 @@
 			isa = PBXGroup;
 			children = (
 				23FA61191D81001D009B928F /* Me.storyboard */,
+				CDDF72051D813E1C00A19970 /* LBMeTableViewController.h */,
+				CDDF72061D813E1C00A19970 /* LBMeTableViewController.m */,
+				CD0BB28D1D8187F10046C278 /* LBgoodsViewController.h */,
+				CD0BB28E1D8187F10046C278 /* LBgoodsViewController.m */,
+				CD1DB3861D82E1400065C43F /* LBMeorderViewController.h */,
+				CD1DB3871D82E1400065C43F /* LBMeorderViewController.m */,
+				CD1DB3851D82E0F80065C43F /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -284,6 +340,68 @@
 				E35509A41D829FD4003934D4 /* LBGoodsModel.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CD1DB3851D82E0F80065C43F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD1DB3761D829E3D0065C43F /* LBMeCell.h */,
+				CD1DB3771D829E3D0065C43F /* LBMeCell.m */,
+				CD1DB3781D829E3D0065C43F /* LBMeCell.xib */,
+				CD1DB37B1D82AB440065C43F /* LBMeTwoCell.h */,
+				CD1DB37C1D82AB440065C43F /* LBMeTwoCell.m */,
+				CD1DB37D1D82AB440065C43F /* LBMeTwoCell.xib */,
+				CD1DB3801D82BA490065C43F /* LBThreeCell.h */,
+				CD1DB3811D82BA490065C43F /* LBThreeCell.m */,
+				CD1DB3821D82BA490065C43F /* LBThreeCell.xib */,
+				CD1DB3891D8398F70065C43F /* LBMeFourCell.h */,
+				CD1DB38A1D8398F70065C43F /* LBMeFourCell.m */,
+				CD1DB38B1D8398F70065C43F /* LBMeFourCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CDDF72081D8143C400A19970 /* Gudie */ = {
+			isa = PBXGroup;
+			children = (
+				CDDF72091D8143C400A19970 /* Controller */,
+				CDDF720C1D8143C400A19970 /* Model */,
+				CDDF720D1D8143C400A19970 /* Other */,
+				CDDF720E1D8143C400A19970 /* View */,
+			);
+			path = Gudie;
+			sourceTree = "<group>";
+		};
+		CDDF72091D8143C400A19970 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDDF72131D81440E00A19970 /* LBGuideCollectionViewController.h */,
+				CDDF72141D81440E00A19970 /* LBGuideCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDDF720C1D8143C400A19970 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDDF720D1D8143C400A19970 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CDDF720E1D8143C400A19970 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDDF72171D8145C100A19970 /* LBGuideCell.h */,
+				CDDF72181D8145C100A19970 /* LBGuideCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +469,11 @@
 				23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */,
 				2371A6031D815A9200F326C3 /* Supermarket.storyboard in Resources */,
 				23FA611A1D81001D009B928F /* Me.storyboard in Resources */,
+				CD1DB37F1D82AB440065C43F /* LBMeTwoCell.xib in Resources */,
+				CD1DB37A1D829E3D0065C43F /* LBMeCell.xib in Resources */,
 				23FA61181D81000C009B928F /* Shopping.storyboard in Resources */,
+				CD1DB38D1D8398F70065C43F /* LBMeFourCell.xib in Resources */,
+				CD1DB3841D82BA490065C43F /* LBThreeCell.xib in Resources */,
 				23FA61141D80FFCE009B928F /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				237D56991D82EBEE00AEB636 /* LBRightTableViewCell.m in Sources */,
 				2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */,
 				2371A6061D815C7200F326C3 /* AFHTTPTool.m in Sources */,
@@ -418,13 +541,28 @@
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
 				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
+=======
+				CD1DB38C1D8398F70065C43F /* LBMeFourCell.m in Sources */,
+>>>>>>> Stashed changes
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */,
+<<<<<<< Updated upstream
 				E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */,
+=======
+				CDDF72151D81440E00A19970 /* LBGuideCollectionViewController.m in Sources */,
+				CD1DB3791D829E3D0065C43F /* LBMeCell.m in Sources */,
+				CD1DB3831D82BA490065C43F /* LBThreeCell.m in Sources */,
+				CD1DB37E1D82AB440065C43F /* LBMeTwoCell.m in Sources */,
+				CD0BB2901D8187F10046C278 /* LBgoodsViewController.m in Sources */,
+				CD0BB2871D81568D0046C278 /* UIView+Frame.m in Sources */,
+				CDDF72191D8145C100A19970 /* LBGuideCell.m in Sources */,
+>>>>>>> Stashed changes
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
+				CDDF72071D813E1C00A19970 /* LBMeTableViewController.m in Sources */,
+				CD1DB3881D82E1400065C43F /* LBMeorderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
