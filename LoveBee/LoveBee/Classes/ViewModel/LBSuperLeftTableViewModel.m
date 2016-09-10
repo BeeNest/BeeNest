@@ -22,7 +22,7 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
 }
-+(void)productWithLeftTableView:(BOOL)isTrue success:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock{
++(void)productWithSuccess:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock{
     
     NSMutableArray *mArray = [NSMutableArray array];
     
@@ -35,18 +35,8 @@
         
         NSDictionary *data = responseObject[@"data"];
         
-        NSArray *array = [NSArray array];
-        
-        if (isTrue) {
-            
-        array = data[@"categories"];
-            
-        }else{
-         
-            array = data[@"products"];
-        }
-
-        
+        NSArray *array = data[@"categories"];
+    
         [array enumerateObjectsUsingBlock:^(NSDictionary*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             LBSuperLeftTableViewModel *model = [LBSuperLeftTableViewModel modelWithDict:obj];
@@ -64,6 +54,44 @@
             errorBlock();
         }
     }];
+    
+}
++(void)productWithID:(NSString *)ID success:(void(^)(NSArray<LBSuperLeftTableViewModel *> *array))successBlock error:(void(^)())errorBlock{
+    
+    
+    NSMutableArray *mArray = [NSMutableArray array];
+    
+    AFHTTPTool *manager = [AFHTTPTool sharedManager];
+    
+    
+    NSDictionary *parm = @{@"call":@"5"};
+    
+    [manager postWithUrl:@"http://iosapi.itcast.cn/loveBeen/supermarket.json.php" params:parm success:^(NSDictionary* responseObject) {
+        
+        NSDictionary *data = responseObject[@"data"];
+        
+        NSDictionary *productData = data[@"products"];
+        
+        NSArray *array = productData[ID];
+        
+        [array enumerateObjectsUsingBlock:^(NSDictionary*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            LBSuperLeftTableViewModel *model = [LBSuperLeftTableViewModel modelWithDict:obj];
+            [mArray addObject:model];
+            
+            
+        }];
+        
+        
+        if (successBlock) {
+            successBlock(mArray.copy);
+        }
+    } failure:^(NSError *error) {
+        if (error) {
+            errorBlock();
+        }
+    }];
+    
     
 }
 - (NSString *)description

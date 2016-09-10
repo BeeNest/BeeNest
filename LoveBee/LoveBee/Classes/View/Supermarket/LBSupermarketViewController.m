@@ -8,15 +8,15 @@
 
 #import "LBSupermarketViewController.h"
 #import "LBSuperLeftTableViewModel.h"
+#import "LBRightTableViewCell.h"
 
 @interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
 
 @property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
-@property (strong, nonatomic) NSArray *rightDataArray;
-//左边选中的
-@property (copy, nonatomic) NSString *selectLeftNameStr;
+@property (strong, nonatomic) NSArray<LBSuperLeftTableViewModel*> *rightDataArray;
+
 
 
 @end
@@ -28,8 +28,12 @@
     _dataArray = dataArray;
     
     [self.leftTableView reloadData];
-
     
+    NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    [self.leftTableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
+
+    [self tableView:self.leftTableView didSelectRowAtIndexPath:path];
 }
 -(void)setRightDataArray:(NSArray *)rightDataArray{
     
@@ -42,28 +46,15 @@
     [super viewDidLoad];
 
     
-    [LBSuperLeftTableViewModel productWithLeftTableView:YES success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+    [LBSuperLeftTableViewModel productWithSuccess:^(NSArray<LBSuperLeftTableViewModel *> *array) {
    
         self.dataArray = array;
-        
-        NSLog(@"3:%@",self.dataArray);
         
     } error:^{
         
         NSLog(@"获取失败");
     }];
     
-    [LBSuperLeftTableViewModel productWithLeftTableView:false success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
-        
-        self.rightDataArray = array;
-        
-        NSLog(@"4:%@",self.rightDataArray);
-        
-    } error:^{
-        
-        NSLog(@"获取失败");
-    }];
-
     
     
 }
@@ -74,62 +65,64 @@
         return self.dataArray.count;
     } else {
         
-        NSInteger count = 0;
-        for (NSDictionary *dict in self.rightDataArray) {
-            NSArray *array = dict[self.selectLeftNameStr];
-
-            if (array.count >0) {
-                
-                count = array.count;
-            }
-
-        }
-  
-        return count;
+        return self.rightDataArray.count;
         
     }
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"leftCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     if (tableView == self.leftTableView) {
         
+        NSString *cellID = @"leftCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
         LBSuperLeftTableViewModel *model = self.dataArray[indexPath.row];
         
         cell.textLabel.text = model.name;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
+        return cell;
     } else {
         
-        NSArray *array = nil;
-        for (NSDictionary *dict in self.rightDataArray) {
-            
-            array = dict[self.selectLeftNameStr];
-            
-            if (array.count>0) {
-                
-                cell.textLabel.text = array[indexPath.row];
-
-            }
-            
-        }
-
+        LBRightTableViewCell *cell = [LBRightTableViewCell cellWithTableView:tableView];
+        
+        cell.model = self.rightDataArray[indexPath.row];
+        
+        return cell;
+        
     }
+
     
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //1. 只有选中左边才需要记录
-    //开发中, 一般记录选中的左边模型
+ 
     if (tableView == self.leftTableView) {
-        self.selectLeftNameStr = self.dataArray[indexPath.row];
-        //2. 刷新表格
+        
+        [LBSuperLeftTableViewModel productWithID:self.dataArray[indexPath.row].id success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+            
+            self.rightDataArray = array;
+            
+        } error:^{
+            
+            NSLog(@"获取失败");
+        }];
+
         [self.rightTableView reloadData];
     }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView == self.rightTableView) {
+        
+        return 65;
+    }
+    return 44;
+    
 }
 
 
