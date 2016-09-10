@@ -10,6 +10,7 @@
 #import "LBPriceView.h"
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
+#import "LBBuyView.h"
 
 @interface LBHomeCell ()
 
@@ -30,6 +31,10 @@
 
 /// 价格View
 @property (nonatomic, strong) LBPriceView *priceView;
+
+/// 加减商品View
+@property (nonatomic, strong) LBBuyView *buyView;
+
 
 @end
 
@@ -54,20 +59,27 @@
     self.goodsImageView = [[UIImageView alloc]init];
     self.goodsImageView.image = [UIImage imageNamed:@"v2_placeholder_square"];
     self.goodsImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
     self.goodsNameLabel = [[UILabel alloc]init];
     self.goodsNameLabel.text = @"商品";
     self.goodsNameLabel.font = [UIFont systemFontOfSize:14];
     self.goodsNameLabel.textColor = [UIColor blackColor];
     self.goodsNameLabel.textAlignment = NSTextAlignmentLeft;
     self.goodsNameLabel.numberOfLines = 1;
+    
     self.fineImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jingxuan.png"]];
+    
     self.giveImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buyOne.png"]];
+    
     self.specificsLabel = [[UILabel alloc]init];
     self.specificsLabel.text = @"asdhfiuvlb";
     self.specificsLabel.textColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1];
     self.specificsLabel.font = [UIFont systemFontOfSize:12];
     self.specificsLabel.textAlignment = NSTextAlignmentLeft;
+    
     self.priceView = [[LBPriceView alloc]init];
+    
+    self.buyView = [[LBBuyView alloc]init];
     
     // 添加控件
     [self addSubview:_goodsImageView];
@@ -76,6 +88,7 @@
     [self addSubview:_giveImageView];
     [self addSubview:_specificsLabel];
     [self addSubview:_priceView];
+    [self addSubview:_buyView];
 //
     // 添加约束
     __weak typeof(self) weakSelf = self;
@@ -112,6 +125,12 @@
         make.bottom.mas_equalTo(weakSelf);
     }];
     
+    [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.bottom.mas_equalTo(weakSelf).mas_offset(-2);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(65);
+    }];
+    
 }
 
 - (void)setGoods:(LBGoodsModel *)goods{
@@ -128,6 +147,8 @@
     _specificsLabel.text = goods.specifics;
     
     _priceView.goods = goods;
+    
+    _buyView.goods = goods;
 }
 
 
