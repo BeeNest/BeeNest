@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "LBGoodsModel.h"
 
+typedef enum : NSInteger {
+    LBHomeCellTypeVertical,
+    LBHomeCellTypeHorizontal
+} LBHomeCellType;
+
 @interface LBHomeCell : UICollectionViewCell
 
 @property (nonatomic, strong) LBGoodsModel *goods;
+
+/// cell类型
+@property (nonatomic, assign) LBHomeCellType cellType;
 
 @end

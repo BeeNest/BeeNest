@@ -10,7 +10,7 @@
 #import "LBHomeCell.h"
 #import "LBHomeViewModel.h"
 
-@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) LBHomeViewModel *viewModel;
 
@@ -81,24 +81,40 @@
 #pragma mark -UICollectionDelegate
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    if (section == 0) {
+        return 4;
+    }
+    
+    
     return _viewModel.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     LBHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.goods = self.viewModel.dataArray[indexPath.item];
+    if (indexPath.section == 0) {
+        cell.cellType = LBHomeCellTypeVertical;
+        return cell;
+    }
     
-    [cell layoutIfNeeded];
+    cell.goods = self.viewModel.dataArray[indexPath.item];
+//    [cell layoutIfNeeded];
     
     return cell;
 }
 
-
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return CGSizeMake(kScreenWidth - 2*HomeCollectionViewCellMargin, kScreenHeigth/5);
+    }
+    return CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -14,6 +14,9 @@
 
 @interface LBHomeCell ()
 
+/// 背景图片
+@property (nonatomic, strong) UIImageView *backImageView;
+
 /// 商品图片
 @property (nonatomic, strong) UIImageView *goodsImageView;
 
@@ -35,7 +38,6 @@
 /// 加减商品View
 @property (nonatomic, strong) LBBuyView *buyView;
 
-
 @end
 
 
@@ -52,10 +54,13 @@
     return self;
 }
 
+
 #pragma mark -设置视图
 - (void)setupUI{
     
     // 初始化控件
+    self.backImageView = [[UIImageView alloc]init];
+    
     self.goodsImageView = [[UIImageView alloc]init];
     self.goodsImageView.image = [UIImage imageNamed:@"v2_placeholder_square"];
     self.goodsImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -82,6 +87,7 @@
     self.buyView = [[LBBuyView alloc]init];
     
     // 添加控件
+    [self addSubview:_backImageView];
     [self addSubview:_goodsImageView];
     [self addSubview:_goodsNameLabel];
     [self addSubview:_fineImageView];
@@ -89,9 +95,12 @@
     [self addSubview:_specificsLabel];
     [self addSubview:_priceView];
     [self addSubview:_buyView];
-//
+
     // 添加约束
     __weak typeof(self) weakSelf = self;
+    [weakSelf.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self);
+    }];
     [weakSelf.goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self);
         make.height.width.equalTo(self.mas_width);
@@ -128,26 +137,42 @@
     [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.bottom.mas_equalTo(weakSelf).mas_offset(-2);
         make.height.mas_equalTo(20);
-//        make.width.mas_equalTo(65);
     }];
     
 }
 
+
+- (void)setCellType:(LBHomeCellType)cellType{
+    _cellType = cellType;
+    if (cellType == LBHomeCellTypeVertical) {
+        self.backImageView.image = [UIImage imageNamed:@"v2_placeholder_full_size"];
+        self.goods = nil;
+    }
+}
+
+
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
+
+    _backImageView.hidden = !(goods == nil);
     
+    _goodsImageView.hidden = goods == nil;
     [_goodsImageView sd_setImageWithURL:[NSURL URLWithString:goods.img] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     
+    _goodsNameLabel.hidden = goods == nil;
     _goodsNameLabel.text = goods.name;
     
     _fineImageView.hidden = !(goods.is_xf == 1);
     
     _giveImageView.hidden = ![goods.pm_desc isEqualToString:@"买一赠一"];
     
+    _specificsLabel.hidden = goods == nil;
     _specificsLabel.text = goods.specifics;
     
+    _priceView.hidden = goods == nil;
     _priceView.goods = goods;
     
+    _buyView.hidden = goods == nil;
     _buyView.goods = goods;
 }
 
