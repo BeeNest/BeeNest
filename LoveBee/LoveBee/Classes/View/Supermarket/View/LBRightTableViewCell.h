@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "LBSuperLeftTableViewModel.h"
 
+@protocol LBRightTableViewCellDelegate <NSObject>
+
+@optional
+-(void)click:(UIButton *)button;
+
+@end
+
 @interface LBRightTableViewCell : UITableViewCell
 //图片
 @property(nonatomic,weak)UIImageView *imgView;
@@ -30,11 +37,15 @@
 @property(nonatomic,weak)UIButton *addBtn;
 //数量
 @property(nonatomic,weak)UILabel *numLabel;
+@property(nonatomic,assign)NSInteger *num;
 //横线
 @property(nonatomic,weak)UIView *lineView;
 
+
+
 @property(strong, nonatomic)LBSuperLeftTableViewModel  *model;
 
+@property (strong, nonatomic) id <LBRightTableViewCellDelegate>cellDelegate;
 +(instancetype)cellWithTableView:(UITableView*)tableView;
 
 

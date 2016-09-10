@@ -121,17 +121,27 @@
     self.lineView.backgroundColor = self.market_priceLabel.textColor;
     
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
+<<<<<<< Updated upstream
     [self.addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+=======
+    [self.addBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    self.addBtn.tag = 1001;
+>>>>>>> Stashed changes
     
-    self.numLabel.text = @"1";
+   
     self.numLabel.font = kMidTextFont;
-    
+    //![self.numLabel.text isEqualToString:@"0"]||
     if (self.numLabel.text.length>0) {
-        
+    
         self.numLabel.hidden = NO;
-        
+    
         [self.reduceBtn setBackgroundImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
+<<<<<<< Updated upstream
         [self.reduceBtn addTarget:self action:@selector(reduceClick) forControlEvents:UIControlEventTouchUpInside];
+=======
+        [self.reduceBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        self.reduceBtn.tag = 1002;
+>>>>>>> Stashed changes
         
         self.reduceBtn.hidden = NO;
     }else{
@@ -144,11 +154,26 @@
     
     
 }
+<<<<<<< Updated upstream
 -(void)addClick{
     NSLog(@"++");
 }
 -(void)reduceClick{
     NSLog(@"--");
+=======
+-(void)click:(UIButton *)button{
+    NSLog(@"++//--");
+    if ([self.cellDelegate respondsToSelector:@selector(click:)]) {
+        
+        [self.cellDelegate click:button];
+        
+    }
+    
+}
+-(void)reduceClick:(UIButton *)button{
+    NSLog(@"--");
+
+>>>>>>> Stashed changes
 }
 -(void)setMyViewFrame{
     

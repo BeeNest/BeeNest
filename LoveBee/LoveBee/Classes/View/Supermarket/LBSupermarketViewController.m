@@ -10,13 +10,16 @@
 #import "LBSuperLeftTableViewModel.h"
 #import "LBRightTableViewCell.h"
 
-@interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate,LBRightTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
 
 @property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
 @property (strong, nonatomic) NSArray<LBSuperLeftTableViewModel*> *rightDataArray;
 
+//记录数量
+
+@property(nonatomic,assign)NSInteger *num;
 
 
 @end
@@ -90,12 +93,23 @@
         LBRightTableViewCell *cell = [LBRightTableViewCell cellWithTableView:tableView];
         
         cell.model = self.rightDataArray[indexPath.row];
-        
+        cell.cellDelegate = self;
+        cell.numLabel.text = [NSString stringWithFormat:@"%zd",self.num];
         return cell;
         
     }
 
     
+}
+-(void)click:(UIButton *)button{
+    if (button.tag==1001) {
+        self.num ++;
+
+    }else if(self.num>0){
+        self.num--;
+    }
+   
+    [self.rightTableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
