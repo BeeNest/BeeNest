@@ -41,6 +41,7 @@
 		E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A11D829267003934D4 /* LBHomeViewModel.m */; };
 		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
 		E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A71D82D4BB003934D4 /* LBBuyView.m */; };
+		E3D86A7F1D83FC8D0002E7A4 /* LBHomeActivitieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		E35509A41D829FD4003934D4 /* LBGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGoodsModel.m; sourceTree = "<group>"; };
 		E35509A61D82D4BB003934D4 /* LBBuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBuyView.h; sourceTree = "<group>"; };
 		E35509A71D82D4BB003934D4 /* LBBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBuyView.m; sourceTree = "<group>"; };
+		E3D86A7D1D83FC8D0002E7A4 /* LBHomeActivitieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeActivitieModel.h; sourceTree = "<group>"; };
+		E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeActivitieModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +385,8 @@
 			children = (
 				E35509A31D829FD4003934D4 /* LBGoodsModel.h */,
 				E35509A41D829FD4003934D4 /* LBGoodsModel.m */,
+				E3D86A7D1D83FC8D0002E7A4 /* LBHomeActivitieModel.h */,
+				E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				CD1DB3A11D83B1C30065C43F /* LBMeCell.m in Sources */,
 				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
+				E3D86A7F1D83FC8D0002E7A4 /* LBHomeActivitieModel.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,

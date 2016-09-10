@@ -57,6 +57,7 @@
 - (void)loadFreshData{
     
     self.viewModel = [[LBHomeViewModel alloc]init];
+    
     [self.viewModel loadFreshHotDataWithSuccess:^(NSDictionary * response) {
         
         NSArray *data = response[@"data"];
@@ -67,6 +68,7 @@
             [mArr addObject:model];
         }];
         self.viewModel.dataArray = mArr;
+        
         [self.collectionView reloadData];
         
     } failure:^(NSError *error) {
@@ -74,8 +76,7 @@
             NSLog(@"获取新鲜热卖信息失败");
         }
     }];
-    
-    
+  
 }
 
 #pragma mark -UICollectionDelegate

@@ -14,6 +14,7 @@
 - (void)loadFreshHotDataWithSuccess:(void (^)(NSDictionary *response))success failure:(void (^)(NSError *error))failure{
     
     [[AFHTTPTool sharedManager] homeFreshHotLoadDataWithSuccess:success failure:failure];
+   
 }
 
 @end
