@@ -137,7 +137,7 @@
     
 }
 
-
+// 设置cell的类型
 - (void)setCellType:(LBHomeCellType)cellType{
     _cellType = cellType;
     if (cellType == LBHomeCellTypeVertical) {
@@ -146,7 +146,7 @@
     }
 }
 
-
+// 给cell的控件赋值
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
 

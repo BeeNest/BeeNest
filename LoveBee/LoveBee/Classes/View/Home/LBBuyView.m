@@ -85,6 +85,7 @@
     return self;
 }
 
+// 给控件赋值的方法
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
     _emptyLabel.hidden = !(goods.number <= 0);
@@ -92,6 +93,7 @@
     
 }
 
+// 设置已选择的商品数量
 - (void)setIndexNumber:(NSInteger)indexNumber{
     _indexNumber = indexNumber;
     if (_indexNumber == 0) {

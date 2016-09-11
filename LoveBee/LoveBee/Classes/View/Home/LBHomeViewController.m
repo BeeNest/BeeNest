@@ -10,9 +10,11 @@
 #import "LBHomeCell.h"
 #import "LBHomeViewModel.h"
 #import <UIImageView+WebCache.h>
+#import "LBHomeHeadView.h"
 
 @interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+/// home界面的Viewmodel
 @property (nonatomic, strong) LBHomeViewModel *viewModel;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -30,7 +32,7 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
 //        flowLayout.itemSize = CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
-        
+        flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 20);
         _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -43,20 +45,23 @@
 - (LBHomeViewModel *)viewModel{
     if (!_viewModel) {
         _viewModel = [LBHomeViewModel new];
-        
     }
     return _viewModel;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view = self.collectionView;
     
+    // 注册cell
     [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"Homecell"];
+    [self.collectionView registerClass:[LBHomeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell"];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
-    
+    self.view.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
+
     // 请求数据
     [self loadHomeData];
 }
@@ -65,22 +70,24 @@
 - (void)loadHomeData{
     
     __weak typeof(self) weakSelf = self;
+    
+    // 请求新鲜热卖数据
     [self.viewModel loadFreshHotData:^(NSArray *data, NSError *error) {
         weakSelf.viewModel.freshDataArray = data;
         [weakSelf.collectionView reloadData];
     }];
     
+    // 请求活动数据
     [self.viewModel loadActivityData:^(NSArray *data, NSError *error) {
         weakSelf.viewModel.activityDataArray = data;
         [weakSelf.collectionView reloadData];
         [self.collectionView reloadData];
     }];
-    
 }
 
 
 
-#pragma mark -UICollectionDelegate
+#pragma mark - UICollectionViewDataSource,  UICollectionViewDelegate
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 2;
@@ -119,6 +126,33 @@
     return CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
 }
 
+// 组头的size
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    
+    if (section == 1) {
+        return CGSizeMake(kScreenWidth, HomeCollectionViewCellMargin * 2);
+    }
+    return CGSizeZero;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    LBHomeHeadView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+#pragma mark -cell点击方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 点击活动cell
+    if (indexPath.section == 0) {
+        
+    }
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

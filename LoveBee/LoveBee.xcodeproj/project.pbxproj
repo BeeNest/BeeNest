@@ -42,6 +42,7 @@
 		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
 		E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A71D82D4BB003934D4 /* LBBuyView.m */; };
 		E3D86A7F1D83FC8D0002E7A4 /* LBHomeActivitieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */; };
+		E3D86A821D842C050002E7A4 /* LBHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		E35509A71D82D4BB003934D4 /* LBBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBuyView.m; sourceTree = "<group>"; };
 		E3D86A7D1D83FC8D0002E7A4 /* LBHomeActivitieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeActivitieModel.h; sourceTree = "<group>"; };
 		E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeActivitieModel.m; sourceTree = "<group>"; };
+		E3D86A801D842C050002E7A4 /* LBHomeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeadView.h; sourceTree = "<group>"; };
+		E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeHeadView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +263,8 @@
 				E35509941D824CAC003934D4 /* LBPriceView.m */,
 				E35509A61D82D4BB003934D4 /* LBBuyView.h */,
 				E35509A71D82D4BB003934D4 /* LBBuyView.m */,
+				E3D86A801D842C050002E7A4 /* LBHomeHeadView.h */,
+				E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				CD1DB3A61D83B1C30065C43F /* LBMeTableViewController.m in Sources */,
+				E3D86A821D842C050002E7A4 /* LBHomeHeadView.m in Sources */,
 				CD1DB3A51D83B1C30065C43F /* LBMeorderViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				CD1DB3A71D83B1C30065C43F /* LBMeTwoCell.m in Sources */,
