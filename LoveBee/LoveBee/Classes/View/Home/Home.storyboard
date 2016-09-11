@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Base Nav Controller-->
         <scene sceneID="Kmw-4H-asH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2h-CV-30O" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2h-CV-30O" customClass="LBBaseNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RXN-R3-hpB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -11,6 +11,7 @@
 #import "LBHomeViewModel.h"
 #import <UIImageView+WebCache.h>
 #import "LBHomeHeadView.h"
+#import "LBWebViewController.h"
 
 @interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -147,7 +148,9 @@
     
     // 点击活动cell
     if (indexPath.section == 0) {
+        LBWebViewController *webVc = [[LBWebViewController alloc]initWithActivityModel:self.viewModel.activityDataArray[indexPath.item]];
         
+        [self.navigationController pushViewController:webVc animated:YES];
     }
     
     

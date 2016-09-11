@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saI-As-yPo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saI-As-yPo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--购物车-->
@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="1291" y="417"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Nav Controller-->
         <scene sceneID="CCO-VS-cdM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="saI-As-yPo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="saI-As-yPo" customClass="LBBaseNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DID-Y1-e7V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
