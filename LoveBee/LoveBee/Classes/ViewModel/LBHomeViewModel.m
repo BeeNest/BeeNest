@@ -8,12 +8,48 @@
 
 #import "LBHomeViewModel.h"
 #import "AFHTTPTool.h"
+#import "LBHomeActivitieModel.h"
 
 @implementation LBHomeViewModel
 
-- (void)loadFreshHotDataWithSuccess:(void (^)(NSDictionary *response))success failure:(void (^)(NSError *error))failure{
+- (void)loadFreshHotData:(void (^)(NSArray *data, NSError *error))completeBlock{
     
-    [[AFHTTPTool sharedManager] homeFreshHotLoadDataWithSuccess:success failure:failure];
+    [[AFHTTPTool sharedManager] homeFreshHotLoadDataWithSuccess:^(id response) {
+        NSArray *data = response[@"data"];
+        
+        NSMutableArray *mArr = [NSMutableArray array];
+        [data enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            LBGoodsModel *model = [LBGoodsModel goodsWithDict:obj];
+            [mArr addObject:model];
+        }];
+        self.freshDataArray = mArr;
+        completeBlock(mArr,nil);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"请求hot数据失败");
+    }];
+   
+}
+
+- (void)loadActivityData:(void (^)(NSArray *data, NSError *error))completeBlock{
+    
+    [[AFHTTPTool sharedManager] homeActivityDataWithSuccess:^(id response) {
+        
+        NSDictionary *data = response[@"data"];
+        
+        NSArray *activities = data[@"activities"];
+        
+        NSMutableArray *mArr = [NSMutableArray array];
+        [activities enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            LBHomeActivitieModel *model = [LBHomeActivitieModel activityModelWithDict:obj];
+            [mArr addObject:model];
+        }];
+        self.activityDataArray = mArr;
+        completeBlock(mArr,nil);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"请求activity数据失败");
+    }];
 }
 
 @end
