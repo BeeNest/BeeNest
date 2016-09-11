@@ -62,24 +62,15 @@
 }
 
 #pragma mark -首页新鲜热卖请求数据
-// 新鲜热卖
 - (void)homeFreshHotLoadDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure{
     
     NSString *url = @"http://iosapi.itcast.cn/loveBeen/firstSell.json.php";
     
-    NSDictionary *param = @{@"call" : @(2)};
+    NSDictionary *param = @{@"call": @(2)};
     
     [self postWithUrl:url params:param success:success failure:failure];
     
 }
 
-// 活动
-- (void)homeActivityDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure{
-    NSString *url = @"http://iosapi.itcast.cn/loveBeen/focus.json.php";
-    
-    NSDictionary *param = @{@"call" : @(1)};
-    
-    [self postWithUrl:url params:param success:success failure:failure];
-}
 
 @end

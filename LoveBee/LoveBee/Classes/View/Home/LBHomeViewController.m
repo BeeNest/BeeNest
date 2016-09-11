@@ -9,13 +9,9 @@
 #import "LBHomeViewController.h"
 #import "LBHomeCell.h"
 #import "LBHomeViewModel.h"
-#import <UIImageView+WebCache.h>
-#import "LBHomeHeadView.h"
-#import "LBWebViewController.h"
 
-@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
-/// home界面的Viewmodel
 @property (nonatomic, strong) LBHomeViewModel *viewModel;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -32,8 +28,8 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
-//        flowLayout.itemSize = CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
-        flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 20);
+        flowLayout.itemSize = CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
+        
         _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -43,119 +39,67 @@
     return _collectionView;
 }
 
-- (LBHomeViewModel *)viewModel{
-    if (!_viewModel) {
-        _viewModel = [LBHomeViewModel new];
-    }
-    return _viewModel;
-}
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view = self.collectionView;
     
-    // 注册cell
-    [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"Homecell"];
-    [self.collectionView registerClass:[LBHomeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell"];
+    [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"cell"];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
-
+    self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
+    
     // 请求数据
-    [self loadHomeData];
+    [self loadFreshData];
+    
 }
 
-#pragma mark -请求数据
-- (void)loadHomeData{
+#pragma mark -全局的方法
+- (void)loadFreshData{
     
-    __weak typeof(self) weakSelf = self;
-    
-    // 请求新鲜热卖数据
-    [self.viewModel loadFreshHotData:^(NSArray *data, NSError *error) {
-        weakSelf.viewModel.freshDataArray = data;
-        [weakSelf.collectionView reloadData];
-    }];
-    
-    // 请求活动数据
-    [self.viewModel loadActivityData:^(NSArray *data, NSError *error) {
-        weakSelf.viewModel.activityDataArray = data;
-        [weakSelf.collectionView reloadData];
+    self.viewModel = [[LBHomeViewModel alloc]init];
+    [self.viewModel loadFreshHotDataWithSuccess:^(NSDictionary * response) {
+        
+        NSArray *data = response[@"data"];
+        
+        NSMutableArray *mArr = [NSMutableArray array];
+        [data enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            LBGoodsModel *model = [LBGoodsModel goodsWithDict:obj];
+            [mArr addObject:model];
+        }];
+        self.viewModel.dataArray = mArr;
         [self.collectionView reloadData];
+        
+    } failure:^(NSError *error) {
+        if (error) {
+            NSLog(@"获取新鲜热卖信息失败");
+        }
     }];
+    
+    
 }
 
-
-
-#pragma mark - UICollectionViewDataSource,  UICollectionViewDelegate
+#pragma mark -UICollectionDelegate
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    if (section == 0) {
-        return self.viewModel.activityDataArray.count;
-    }
-    
-    
-    return _viewModel.freshDataArray.count;
+    return _viewModel.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    LBHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    LBHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Homecell" forIndexPath:indexPath];
+    cell.goods = self.viewModel.dataArray[indexPath.item];
     
-    if (indexPath.section == 0) {
-        cell.cellType = LBHomeCellTypeVertical;
-        [cell.backImageView sd_setImageWithURL:[NSURL URLWithString:self.viewModel.activityDataArray[indexPath.item].img] placeholderImage:[UIImage imageNamed:@"v2_placeholder_full_size"]];
-        return cell;
-    }
-    
-    cell.goods = self.viewModel.freshDataArray[indexPath.item];
     [cell layoutIfNeeded];
     
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return CGSizeMake(kScreenWidth - 2*HomeCollectionViewCellMargin, kScreenHeigth/5);
-    }
-    return CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
-}
 
-// 组头的size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    
-    if (section == 1) {
-        return CGSizeMake(kScreenWidth, HomeCollectionViewCellMargin * 2);
-    }
-    return CGSizeZero;
-}
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
-    LBHomeHeadView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell" forIndexPath:indexPath];
-    
-    return cell;
-}
-
-#pragma mark -cell点击方法
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    // 点击活动cell
-    if (indexPath.section == 0) {
-        LBWebViewController *webVc = [[LBWebViewController alloc]initWithActivityModel:self.viewModel.activityDataArray[indexPath.item]];
-        
-        [self.navigationController pushViewController:webVc animated:YES];
-    }
-    
-    
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

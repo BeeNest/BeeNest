@@ -34,9 +34,7 @@
 - (void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 
 
-#pragma mark -首页请求数据接口方法
+#pragma mark -请求数据接口方法
 - (void)homeFreshHotLoadDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
-
-- (void)homeActivityDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
 
 @end

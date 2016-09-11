@@ -85,14 +85,12 @@
     return self;
 }
 
-// 给控件赋值的方法
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
     _emptyLabel.hidden = !(goods.number <= 0);
     _addButton.hidden = goods.number <= 0;
     
 }
-<<<<<<< HEAD
 -(void)setModel:(LBSuperLeftTableViewModel *)model{
     
     _model = model;
@@ -100,10 +98,6 @@
     _emptyLabel.hidden = !(model.number <= 0);
     _addButton.hidden = model.number <= 0;
 }
-=======
-
-// 设置已选择的商品数量
->>>>>>> origin/master
 - (void)setIndexNumber:(NSInteger)indexNumber{
     _indexNumber = indexNumber;
     if (_indexNumber == 0) {

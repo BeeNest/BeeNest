@@ -35,6 +35,7 @@
 /// 加减商品View
 @property (nonatomic, strong) LBBuyView *buyView;
 
+
 @end
 
 
@@ -51,13 +52,10 @@
     return self;
 }
 
-
 #pragma mark -设置视图
 - (void)setupUI{
     
     // 初始化控件
-    self.backImageView = [[UIImageView alloc]init];
-    
     self.goodsImageView = [[UIImageView alloc]init];
     self.goodsImageView.image = [UIImage imageNamed:@"v2_placeholder_square"];
     self.goodsImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -84,7 +82,6 @@
     self.buyView = [[LBBuyView alloc]init];
     
     // 添加控件
-    [self addSubview:_backImageView];
     [self addSubview:_goodsImageView];
     [self addSubview:_goodsNameLabel];
     [self addSubview:_fineImageView];
@@ -92,21 +89,18 @@
     [self addSubview:_specificsLabel];
     [self addSubview:_priceView];
     [self addSubview:_buyView];
-
+//
     // 添加约束
     __weak typeof(self) weakSelf = self;
-    [weakSelf.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakSelf);
-    }];
     [weakSelf.goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.leading.trailing.equalTo(weakSelf);
-        make.height.equalTo(weakSelf.mas_width);
+        make.top.leading.trailing.equalTo(self);
+        make.height.width.equalTo(self.mas_width);
     }];
     [weakSelf.goodsNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
         make.leading.mas_equalTo(weakSelf).mas_offset(5);
         make.trailing.mas_equalTo(weakSelf).mas_offset(-5);
-//        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_goodsNameLabel.mas_bottom).offset(3);
@@ -125,50 +119,35 @@
         make.leading.equalTo(_goodsNameLabel);
     }];
     [weakSelf.priceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(_goodsNameLabel);
+        make.leading.mas_equalTo(weakSelf.specificsLabel);
         make.top.mas_equalTo(weakSelf.specificsLabel.mas_bottom);
-        make.bottom.mas_equalTo(weakSelf).mas_offset(5);
+        make.trailing.mas_equalTo(weakSelf);
+        make.bottom.mas_equalTo(weakSelf);
     }];
     
     [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.bottom.mas_equalTo(weakSelf).mas_offset(-2);
         make.height.mas_equalTo(20);
+//        make.width.mas_equalTo(65);
     }];
     
 }
 
-// 设置cell的类型
-- (void)setCellType:(LBHomeCellType)cellType{
-    _cellType = cellType;
-    if (cellType == LBHomeCellTypeVertical) {
-//        self.backImageView.image = [UIImage imageNamed:@"v2_placeholder_full_size"];
-        self.goods = nil;
-    }
-}
-
-// 给cell的控件赋值
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
-
-    _backImageView.hidden = !(goods == nil);
     
-    _goodsImageView.hidden = goods == nil;
     [_goodsImageView sd_setImageWithURL:[NSURL URLWithString:goods.img] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     
-    _goodsNameLabel.hidden = goods == nil;
     _goodsNameLabel.text = goods.name;
     
     _fineImageView.hidden = !(goods.is_xf == 1);
     
     _giveImageView.hidden = ![goods.pm_desc isEqualToString:@"买一赠一"];
     
-    _specificsLabel.hidden = goods == nil;
     _specificsLabel.text = goods.specifics;
     
-    _priceView.hidden = goods == nil;
     _priceView.goods = goods;
     
-    _buyView.hidden = goods == nil;
     _buyView.goods = goods;
 }
 

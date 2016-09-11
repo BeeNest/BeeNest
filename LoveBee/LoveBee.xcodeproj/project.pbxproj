@@ -42,10 +42,6 @@
 		E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A11D829267003934D4 /* LBHomeViewModel.m */; };
 		E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A41D829FD4003934D4 /* LBGoodsModel.m */; };
 		E35509A81D82D4BB003934D4 /* LBBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E35509A71D82D4BB003934D4 /* LBBuyView.m */; };
-		E3D86A7F1D83FC8D0002E7A4 /* LBHomeActivitieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */; };
-		E3D86A821D842C050002E7A4 /* LBHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */; };
-		E3D86A851D84FC460002E7A4 /* LBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A841D84FC460002E7A4 /* LBWebViewController.m */; };
-		E3D86A881D85039D0002E7A4 /* LBBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A871D85039D0002E7A4 /* LBBaseNavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,14 +110,6 @@
 		E35509A41D829FD4003934D4 /* LBGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGoodsModel.m; sourceTree = "<group>"; };
 		E35509A61D82D4BB003934D4 /* LBBuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBuyView.h; sourceTree = "<group>"; };
 		E35509A71D82D4BB003934D4 /* LBBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBuyView.m; sourceTree = "<group>"; };
-		E3D86A7D1D83FC8D0002E7A4 /* LBHomeActivitieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeActivitieModel.h; sourceTree = "<group>"; };
-		E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeActivitieModel.m; sourceTree = "<group>"; };
-		E3D86A801D842C050002E7A4 /* LBHomeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeadView.h; sourceTree = "<group>"; };
-		E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeHeadView.m; sourceTree = "<group>"; };
-		E3D86A831D84FC460002E7A4 /* LBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBWebViewController.h; sourceTree = "<group>"; };
-		E3D86A841D84FC460002E7A4 /* LBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBWebViewController.m; sourceTree = "<group>"; };
-		E3D86A861D85039D0002E7A4 /* LBBaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBaseNavController.h; sourceTree = "<group>"; };
-		E3D86A871D85039D0002E7A4 /* LBBaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBaseNavController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,16 +254,12 @@
 				23FA61131D80FFCE009B928F /* Home.storyboard */,
 				E355098D1D8157AF003934D4 /* LBHomeViewController.h */,
 				E355098E1D8157AF003934D4 /* LBHomeViewController.m */,
-				E3D86A831D84FC460002E7A4 /* LBWebViewController.h */,
-				E3D86A841D84FC460002E7A4 /* LBWebViewController.m */,
 				E355098A1D814B99003934D4 /* LBHomeCell.h */,
 				E355098B1D814B99003934D4 /* LBHomeCell.m */,
 				E35509931D824CAC003934D4 /* LBPriceView.h */,
 				E35509941D824CAC003934D4 /* LBPriceView.m */,
 				E35509A61D82D4BB003934D4 /* LBBuyView.h */,
 				E35509A71D82D4BB003934D4 /* LBBuyView.m */,
-				E3D86A801D842C050002E7A4 /* LBHomeHeadView.h */,
-				E3D86A811D842C050002E7A4 /* LBHomeHeadView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -285,13 +269,8 @@
 			children = (
 				23FA610E1D80FDA3009B928F /* LBTabBarController.h */,
 				23FA610F1D80FDA3009B928F /* LBTabBarController.m */,
-<<<<<<< HEAD
 				237EB63D1D84F7AF00A7A631 /* LBMainViewController.h */,
 				237EB63E1D84F7AF00A7A631 /* LBMainViewController.m */,
-=======
-				E3D86A861D85039D0002E7A4 /* LBBaseNavController.h */,
-				E3D86A871D85039D0002E7A4 /* LBBaseNavController.m */,
->>>>>>> origin/master
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -408,8 +387,6 @@
 			children = (
 				E35509A31D829FD4003934D4 /* LBGoodsModel.h */,
 				E35509A41D829FD4003934D4 /* LBGoodsModel.m */,
-				E3D86A7D1D83FC8D0002E7A4 /* LBHomeActivitieModel.h */,
-				E3D86A7E1D83FC8D0002E7A4 /* LBHomeActivitieModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -545,7 +522,6 @@
 			files = (
 				CD1DB3B81D83B2C70065C43F /* UIView+Frame.m in Sources */,
 				237D56991D82EBEE00AEB636 /* LBRightTableViewCell.m in Sources */,
-				E3D86A881D85039D0002E7A4 /* LBBaseNavController.m in Sources */,
 				CD1DB3B41D83B25E0065C43F /* LBGuideCollectionViewController.m in Sources */,
 				CD1DB3B51D83B25E0065C43F /* LBGuideCell.m in Sources */,
 				2371A60D1D818CD900F326C3 /* NSArray+Log.m in Sources */,
@@ -553,17 +529,14 @@
 				E355098F1D8157AF003934D4 /* LBHomeViewController.m in Sources */,
 				2371A6091D81882400F326C3 /* LBSuperLeftTableViewModel.m in Sources */,
 				CD1DB3A91D83B1C30065C43F /* LBThreeCell.m in Sources */,
-				E3D86A851D84FC460002E7A4 /* LBWebViewController.m in Sources */,
 				CD1DB3A11D83B1C30065C43F /* LBMeCell.m in Sources */,
 				E35509A51D829FD4003934D4 /* LBGoodsModel.m in Sources */,
 				E35509951D824CAC003934D4 /* LBPriceView.m in Sources */,
-				E3D86A7F1D83FC8D0002E7A4 /* LBHomeActivitieModel.m in Sources */,
 				23FA61101D80FDA3009B928F /* LBTabBarController.m in Sources */,
 				E35509A21D829267003934D4 /* LBHomeViewModel.m in Sources */,
 				2371A6021D815A9200F326C3 /* LBSupermarketViewController.m in Sources */,
 				237EB63F1D84F7AF00A7A631 /* LBMainViewController.m in Sources */,
 				CD1DB3A61D83B1C30065C43F /* LBMeTableViewController.m in Sources */,
-				E3D86A821D842C050002E7A4 /* LBHomeHeadView.m in Sources */,
 				CD1DB3A51D83B1C30065C43F /* LBMeorderViewController.m in Sources */,
 				E355098C1D814B99003934D4 /* LBHomeCell.m in Sources */,
 				CD1DB3A71D83B1C30065C43F /* LBMeTwoCell.m in Sources */,

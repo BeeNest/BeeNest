@@ -8,20 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "LBGoodsModel.h"
-#import "LBHomeActivitieModel.h"
 
 @interface LBHomeViewModel : NSObject
 
-@property (nonatomic, strong) NSArray<LBGoodsModel *> *freshDataArray;
+@property (nonatomic, strong) NSArray<LBGoodsModel *> *dataArray;
 
-@property (nonatomic, strong) NSArray<LBHomeActivitieModel *> *activityDataArray;
-
-
-#pragma mark - 请求数据方法
-// 新鲜热卖
-- (void)loadFreshHotData:(void (^)(NSArray *data, NSError *error))completeBlock;
-
-// 活动
-- (void)loadActivityData:(void (^)(NSArray *data, NSError *error))completeBlock;
+- (void)loadFreshHotDataWithSuccess:(void (^)(NSDictionary *response))success failure:(void (^)(NSError *error))failure;
 
 @end

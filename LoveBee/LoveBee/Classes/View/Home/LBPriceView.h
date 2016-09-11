@@ -11,7 +11,8 @@
 
 @interface LBPriceView : UIView
 
-/// 商品模型
+@property (nonatomic, assign) BOOL hasMarketPrice;
+
 @property (nonatomic, strong) LBGoodsModel *goods;
 
 

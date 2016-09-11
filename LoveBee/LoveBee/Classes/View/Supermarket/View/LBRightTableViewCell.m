@@ -109,57 +109,10 @@
     [self.market_priceLabel setTextColor:kGrayTextColor];
     
     self.lineView.backgroundColor = self.market_priceLabel.textColor;
-<<<<<<< HEAD
     self.buyView.model = self.model;
-=======
-    
-    [self.addBtn setBackgroundImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
-
-    [self.addBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    self.addBtn.tag = 1001;
-
-    
-   
-    self.numLabel.font = kMidTextFont;
-    //![self.numLabel.text isEqualToString:@"0"]||
-    if (self.numLabel.text.length>0) {
-    
-        self.numLabel.hidden = NO;
-    
-        [self.reduceBtn setBackgroundImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
-
-        [self.reduceBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-        self.reduceBtn.tag = 1002;
-
-        
-        self.reduceBtn.hidden = NO;
-    }else{
-        self.numLabel.hidden = YES;
-        self.reduceBtn.hidden = YES;
-
-        
-    }
-
-    
     
 }
 
--(void)click:(UIButton *)button{
-    NSLog(@"++//--");
-    if ([self.cellDelegate respondsToSelector:@selector(click:)]) {
-        
-        [self.cellDelegate click:button];
-        
-    }
->>>>>>> origin/master
-    
-}
-
-<<<<<<< HEAD
-=======
-
-}
->>>>>>> origin/master
 -(void)setMyViewFrame{
     
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {

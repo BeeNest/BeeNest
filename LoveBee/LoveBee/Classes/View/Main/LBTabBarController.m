@@ -7,7 +7,6 @@
 //
 
 #import "LBTabBarController.h"
-#import "LBBaseNavController.h"
 
 @interface LBTabBarController ()
 @property(strong,nonatomic)NSArray *items;
@@ -54,22 +53,21 @@
 }
 
 
-
 -(void)addChildViewControllers{
     
-    LBBaseNavController *home = [self boardWithName:@"Home"];
-    LBBaseNavController *supermarket = [self boardWithName:@"Supermarket"];
-    LBBaseNavController *shopping = [self boardWithName:@"Shopping"];
-      LBBaseNavController *me = [self boardWithName:@"Me"];
+    UINavigationController *home = [self boardWithName:@"Home"];
+    UINavigationController *supermarket = [self boardWithName:@"Supermarket"];
+    UINavigationController *shopping = [self boardWithName:@"Shopping"];
+      UINavigationController *me = [self boardWithName:@"Me"];
     
     self.viewControllers = @[home,supermarket,shopping,me];
 }
 
--(LBBaseNavController *)boardWithName:(NSString *)boardName{
+-(UINavigationController *)boardWithName:(NSString *)boardName{
     
     UIStoryboard *board = [UIStoryboard storyboardWithName:boardName bundle:nil];
     
-    LBBaseNavController *nav = [board instantiateInitialViewController];
+    UINavigationController *nav = [board instantiateInitialViewController];
     
     return nav;
 }
