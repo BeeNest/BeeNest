@@ -41,6 +41,8 @@
         
     }
     return _collectionView;
+    
+    
 }
 
 - (LBHomeViewModel *)viewModel{
@@ -65,6 +67,8 @@
 
     // 请求数据
     [self loadHomeData];
+    
+    self.tabBarController.tabBarItem.badgeValue = @"2";
 }
 
 #pragma mark -请求数据
@@ -99,7 +103,6 @@
     if (section == 0) {
         return self.viewModel.activityDataArray.count;
     }
-    
     
     return _viewModel.freshDataArray.count;
 }

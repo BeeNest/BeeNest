@@ -12,3 +12,6 @@
 
 #pragma mark -HOME 属性
 #define HomeCollectionViewCellMargin 10
+
+#pragma mark -通知名称
+#define LBShopCarChangeBadgeValue @"LBShopCarChangeBadgeValue"

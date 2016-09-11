@@ -106,7 +106,6 @@
         make.top.mas_equalTo(weakSelf.goodsImageView.mas_bottom);
         make.leading.mas_equalTo(weakSelf).mas_offset(5);
         make.trailing.mas_equalTo(weakSelf).mas_offset(-5);
-//        make.height.mas_equalTo(20);
     }];
     [weakSelf.fineImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_goodsNameLabel.mas_bottom).offset(3);
@@ -127,7 +126,7 @@
     [weakSelf.priceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(_goodsNameLabel);
         make.top.mas_equalTo(weakSelf.specificsLabel.mas_bottom);
-        make.bottom.mas_equalTo(weakSelf).mas_offset(5);
+        make.bottom.mas_equalTo(weakSelf.mas_bottom);
     }];
     
     [weakSelf.buyView mas_makeConstraints:^(MASConstraintMaker *make) {

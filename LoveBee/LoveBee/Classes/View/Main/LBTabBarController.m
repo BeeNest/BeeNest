@@ -8,6 +8,7 @@
 
 #import "LBTabBarController.h"
 #import "LBBaseNavController.h"
+#import "LBUserShopCar.h"
 
 @interface LBTabBarController ()
 @property(strong,nonatomic)NSArray *items;
@@ -21,7 +22,35 @@
     [self addChildViewControllers];
     
     [self addTabBarInfo];
+    
+    
+    [self addNotification];
+    
 }
+
+#pragma mark -添加通知
+- (void)addNotification{
+    
+    // 改变购物车角标
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shopCarChangeBadgeValue:) name:LBShopCarChangeBadgeValue object:nil];
+    
+}
+
+- (void)shopCarChangeBadgeValue:(NSNotification *)notification{
+    
+    UIViewController *shopCarVc = self.viewControllers[2];
+    
+    NSInteger count = [[LBUserShopCar sharedShopCar] getAllGoodsCountFromShopCar];
+    NSLog(@"count = %zd",count);
+    
+    if (count == 0) {
+        shopCarVc.tabBarItem.badgeValue = nil;
+        return;
+    }
+    shopCarVc.tabBarItem.badgeValue = [NSString stringWithFormat:@"%zd",count];
+    
+}
+
 -(void)addTabBarWithNum:(NSInteger)num andTitle:(NSString *)title andImgName:(NSString*)imgName{
     UITabBarItem *item = self.items[num];
     
@@ -47,10 +76,7 @@
     [self addTabBarWithNum:1 andTitle:@"闪送超市" andImgName:@"v2_order"];
     [self addTabBarWithNum:2 andTitle:@"购物车" andImgName:@"shopCart"];
     [self addTabBarWithNum:3 andTitle:@"我的" andImgName:@"v2_my"];
-    
-    
-    
-    
+
 }
 
 

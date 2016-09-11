@@ -17,6 +17,9 @@
 /// 显示网页的View
 @property (nonatomic, strong) UIWebView *webView;
 
+/// 加载进度条
+@property (nonatomic, strong) UIView *progressView;
+
 @end
 
 @implementation LBWebViewController

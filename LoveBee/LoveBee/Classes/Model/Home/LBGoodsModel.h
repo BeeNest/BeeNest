@@ -69,6 +69,9 @@
 /// 库存数量
 @property (nonatomic, assign) NSInteger number;
 
+/// 记录用户选择的商品的次数
+@property (nonatomic, assign) NSInteger userBuyCount;
+
 + (instancetype)goodsWithDict:(NSDictionary *)dict;
 
 @end

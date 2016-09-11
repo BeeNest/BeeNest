@@ -12,6 +12,7 @@
 
 @implementation LBHomeViewModel
 
+// 获取新鲜热卖的数据
 - (void)loadFreshHotData:(void (^)(NSArray *data, NSError *error))completeBlock{
     
     [[AFHTTPTool sharedManager] homeFreshHotLoadDataWithSuccess:^(id response) {
@@ -31,6 +32,7 @@
    
 }
 
+// 获取活动的数据
 - (void)loadActivityData:(void (^)(NSArray *data, NSError *error))completeBlock{
     
     [[AFHTTPTool sharedManager] homeActivityDataWithSuccess:^(id response) {

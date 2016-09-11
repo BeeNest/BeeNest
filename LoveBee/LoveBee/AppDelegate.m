@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+
     
     _window = [[UIWindow alloc]initWithFrame:kScreenBounds];
     _window.backgroundColor = [UIColor whiteColor];
@@ -32,6 +33,8 @@
     
     // 把当前的版本号保存到沙盒中
     [self saveAppVersion];
+    
+//    self.tabBarController.tabBarItem.badgeValue = @"2";
     
     
     return YES;

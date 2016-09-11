@@ -8,6 +8,8 @@
 
 #import "LBBuyView.h"
 #import <Masonry.h>
+#import "SVProgressHUD.h"
+#import "LBUserShopCar.h"
 
 @interface LBBuyView ()
 
@@ -117,13 +119,34 @@
 // 加号按钮
 - (void)addButtonClick:(UIButton *)sender{
     NSLog(@"加号按钮点击");
+    if (self.indexNumber > self.goods.number && self.indexNumber > self.model.number) {
+        NSLog(@"库存不足");
+        if (![SVProgressHUD isVisible]) {
+            [SVProgressHUD showImage:[UIImage imageNamed:@"v2_orderSuccess"] status:@"库存不足"];
+        }
+        return;
+    }
+    
     self.indexNumber++;
+    self.goods.userBuyCount = self.indexNumber;
+    [[LBUserShopCar sharedShopCar] addGoodsToShopCar:self.goods];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:LBShopCarChangeBadgeValue object:nil];
+    
+    
 }
 
 // 减号按钮
 - (void)cutButtonClick:(UIButton *)sender{
     NSLog(@"减号按钮点击");
     self.indexNumber--;
+    self.goods.userBuyCount = self.indexNumber;
+    
+    if (self.indexNumber == 0) {
+        [[LBUserShopCar sharedShopCar] removeGoodsFromShopCar:self.goods];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:LBShopCarChangeBadgeValue object:nil];
+    
 }
 
 

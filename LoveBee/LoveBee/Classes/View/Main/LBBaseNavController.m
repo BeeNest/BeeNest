@@ -11,6 +11,9 @@
 
 @interface LBBaseNavController ()
 
+/// 返回按钮
+@property (nonatomic, strong) UIButton *backButton;
+
 @end
 
 @implementation LBBaseNavController
@@ -32,9 +35,23 @@
     // 设置选染色
     [self.navigationBar setTintColor: kGrayTextColor];
     
-//    self.navigationBar.backgroundColor = [UIColor colorWithRed:1.00 green:0.73 blue:0.00 alpha:1.00];
+    // 初始化返回按钮
+    self.backButton = ({
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setImage:[UIImage imageNamed:@"v2_goback"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(backButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        btn.frame = CGRectMake(0, 0, 44, 40);
+        btn;
+    });
+    
 
     
+}
+
+#pragma mark - 按钮点击事件
+- (void)backButtonClick:(UIButton *)sender{
+    [self popViewControllerAnimated:YES];
 }
 
 #pragma mark - 设置状态栏
@@ -51,9 +68,12 @@
 #pragma mark -设置TabBar
 // 统一隐藏TabBar
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
-    viewController.hidesBottomBarWhenPushed = YES;
     viewController.editing = YES;
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.backButton];
+    }
+    
     
     [super pushViewController:viewController animated:animated];
     
