@@ -10,13 +10,6 @@
 #import "LBSuperLeftTableViewModel.h"
 #import "LBBuyView.h"
 
-@protocol LBRightTableViewCellDelegate <NSObject>
-
-@optional
--(void)click:(UIButton *)button;
-
-@end
-
 @interface LBRightTableViewCell : UITableViewCell
 //图片
 @property(nonatomic,weak)UIImageView *imgView;
@@ -32,15 +25,25 @@
 @property(nonatomic,weak)UILabel *priceLabel;
 //原价
 @property(nonatomic,weak)UILabel *market_priceLabel;
+<<<<<<< HEAD
 //横线
 @property(nonatomic,weak)UIView *lineView;
 /// 加减商品View
 @property (nonatomic, strong) LBBuyView *buyView;
 
+=======
+//减
+@property(nonatomic,weak)UIButton *reduceBtn;
+//加
+@property(nonatomic,weak)UIButton *addBtn;
+//数量
+@property(nonatomic,weak)UILabel *numLabel;
+//横线
+@property(nonatomic,weak)UIView *lineView;
+>>>>>>> parent of ee23178... 交
 
 @property(strong, nonatomic)LBSuperLeftTableViewModel  *model;
 
-@property (strong, nonatomic) id <LBRightTableViewCellDelegate>cellDelegate;
 +(instancetype)cellWithTableView:(UITableView*)tableView;
 
 

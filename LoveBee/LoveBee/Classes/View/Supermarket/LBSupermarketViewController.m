@@ -11,14 +11,23 @@
 #import "LBRightTableViewCell.h"
 #import <SVProgressHUD.h>
 
+<<<<<<< HEAD
 @interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate,LBRightTableViewCellDelegate>
 @property (strong, nonatomic)  UITableView *leftTableView;
 @property (strong, nonatomic)  UITableView *rightTableView;
+=======
+@interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *leftTableView;
+@property (weak, nonatomic) IBOutlet UITableView *rightTableView;
+>>>>>>> parent of ee23178... 交
 
 @property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
 @property (strong, nonatomic) NSArray<LBSuperLeftTableViewModel*> *rightDataArray;
 
+<<<<<<< HEAD
 @property(nonatomic,assign)NSInteger select;
+=======
+>>>>>>> parent of ee23178... 交
 
 
 @end
@@ -125,7 +134,10 @@
         LBRightTableViewCell *cell = [LBRightTableViewCell cellWithTableView:tableView];
         
         cell.model = self.rightDataArray[indexPath.row];
+<<<<<<< HEAD
         cell.cellDelegate = self;
+=======
+>>>>>>> parent of ee23178... 交
         
         return cell;
         
