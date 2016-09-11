@@ -85,19 +85,21 @@
     return self;
 }
 
+// 给控件赋值的方法
 - (void)setGoods:(LBGoodsModel *)goods{
     _goods = goods;
     _emptyLabel.hidden = !(goods.number <= 0);
     _addButton.hidden = goods.number <= 0;
     
 }
--(void)setModel:(LBSuperLeftTableViewModel *)model{
-    
+
+- (void)setModel:(LBSuperLeftTableViewModel *)model{
     _model = model;
-    
     _emptyLabel.hidden = !(model.number <= 0);
     _addButton.hidden = model.number <= 0;
 }
+
+// 设置已选择的商品数量
 - (void)setIndexNumber:(NSInteger)indexNumber{
     _indexNumber = indexNumber;
     if (_indexNumber == 0) {
@@ -114,13 +116,13 @@
 #pragma mark -按钮点击事件
 // 加号按钮
 - (void)addButtonClick:(UIButton *)sender{
-//    NSLog(@"加号按钮点击");
+    NSLog(@"加号按钮点击");
     self.indexNumber++;
 }
 
 // 减号按钮
 - (void)cutButtonClick:(UIButton *)sender{
-//    NSLog(@"减号按钮点击");
+    NSLog(@"减号按钮点击");
     self.indexNumber--;
 }
 

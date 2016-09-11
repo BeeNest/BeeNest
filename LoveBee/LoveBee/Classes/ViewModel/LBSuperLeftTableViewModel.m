@@ -8,6 +8,7 @@
 
 #import "LBSuperLeftTableViewModel.h"
 #import "AFHTTPTool.h"
+#import "SVProgressHUD.h"
 
 @implementation LBSuperLeftTableViewModel
 +(instancetype)modelWithDict:(NSDictionary *)dict{
@@ -30,6 +31,8 @@
     
     
     NSDictionary *parm = @{@"call":@"5"};
+    
+    
     
     [manager postWithUrl:@"http://iosapi.itcast.cn/loveBeen/supermarket.json.php" params:parm success:^(NSDictionary* responseObject) {
         

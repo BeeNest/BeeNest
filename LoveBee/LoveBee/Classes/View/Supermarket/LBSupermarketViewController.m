@@ -73,7 +73,7 @@
     self.rightTableView.dataSource = self;
     
     
-    [SVProgressHUD showWithStatus:@"正在加载中"];
+//    [SVProgressHUD showWithStatus:@"正在加载中"];
 
     [LBSuperLeftTableViewModel productWithSuccess:^(NSArray<LBSuperLeftTableViewModel *> *array) {
    
@@ -108,6 +108,8 @@
     
     if (tableView == self.leftTableView) {
         
+        
+        
         NSString *cellID = @"leftCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if (!cell) {
@@ -136,16 +138,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
  
     if (tableView == self.leftTableView) {
+        
         
         self.select = indexPath.row;
         
         [LBSuperLeftTableViewModel productWithID:self.dataArray[indexPath.row].id success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
             
             self.rightDataArray = array;
-            
-            [SVProgressHUD dismiss];
             
         } error:^{
             
@@ -174,5 +177,14 @@
     return nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [SVProgressHUD showWithStatus:@"正在加载"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
 
 @end

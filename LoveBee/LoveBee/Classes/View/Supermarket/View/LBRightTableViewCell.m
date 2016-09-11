@@ -7,6 +7,7 @@
 //
 
 #import "LBRightTableViewCell.h"
+#import "LBBuyView.h"
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 @implementation LBRightTableViewCell
