@@ -24,6 +24,8 @@
 @property(nonatomic,copy)NSString *market_price;
 //优惠价
 @property(nonatomic,copy)NSString *price;
+// 库存数量
+@property (nonatomic, assign) NSInteger number;
 
 +(instancetype)modelWithDict:(NSDictionary *)dict;
 

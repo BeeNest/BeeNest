@@ -16,64 +16,10 @@
                     <view key="view" contentMode="scaleToFill" id="QAp-0W-7Ro">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uxj-WV-PwJ">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="leftCell" id="LqZ-PY-MQI">
-                                        <rect key="frame" x="0.0" y="92" width="134" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LqZ-PY-MQI" id="bp2-16-ICZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="jQV-0B-PGI" id="6U2-QD-8tF"/>
-                                    <outlet property="delegate" destination="jQV-0B-PGI" id="PrN-Oc-gO8"/>
-                                </connections>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-3E-gCZ">
-                                <rect key="frame" x="134" y="64" width="280" height="672"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="9Mw-RB-syV"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cRl-5o-2z7">
-                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRl-5o-2z7" id="DOD-fK-1kD">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="jQV-0B-PGI" id="OQM-LG-9pb"/>
-                                    <outlet property="delegate" destination="jQV-0B-PGI" id="Hks-OT-gj8"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Uxj-WV-PwJ" firstAttribute="top" secondItem="yiB-Uk-BCp" secondAttribute="bottom" constant="-64" id="AM8-sD-b2O"/>
-                            <constraint firstItem="uoc-3E-gCZ" firstAttribute="leading" secondItem="Uxj-WV-PwJ" secondAttribute="trailing" id="DP9-P4-3fK"/>
-                            <constraint firstAttribute="trailing" secondItem="uoc-3E-gCZ" secondAttribute="trailing" id="I3h-mt-IOG"/>
-                            <constraint firstItem="rlD-Qs-cup" firstAttribute="top" secondItem="uoc-3E-gCZ" secondAttribute="bottom" id="KNm-Py-GTS"/>
-                            <constraint firstItem="rlD-Qs-cup" firstAttribute="top" secondItem="Uxj-WV-PwJ" secondAttribute="bottom" id="UQv-Oe-YqG"/>
-                            <constraint firstItem="Uxj-WV-PwJ" firstAttribute="leading" secondItem="QAp-0W-7Ro" secondAttribute="leading" id="hNw-cR-atU"/>
-                            <constraint firstItem="uoc-3E-gCZ" firstAttribute="top" secondItem="yiB-Uk-BCp" secondAttribute="bottom" id="mfu-ce-nMU"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="闪电超市" id="JE1-XI-Bio"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <connections>
-                        <outlet property="leftTableView" destination="Uxj-WV-PwJ" id="GV3-f5-EiM"/>
-                        <outlet property="rightTableView" destination="uoc-3E-gCZ" id="LRS-ds-0XK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lc-WU-5mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

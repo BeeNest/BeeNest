@@ -9,17 +9,16 @@
 #import "LBSupermarketViewController.h"
 #import "LBSuperLeftTableViewModel.h"
 #import "LBRightTableViewCell.h"
+#import <SVProgressHUD.h>
 
 @interface LBSupermarketViewController ()<UITableViewDataSource,UITableViewDelegate,LBRightTableViewCellDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *leftTableView;
-@property (weak, nonatomic) IBOutlet UITableView *rightTableView;
+@property (strong, nonatomic)  UITableView *leftTableView;
+@property (strong, nonatomic)  UITableView *rightTableView;
 
 @property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
 @property (strong, nonatomic) NSArray<LBSuperLeftTableViewModel*> *rightDataArray;
 
-//记录数量
-
-@property(nonatomic,assign)NSInteger *num;
+@property(nonatomic,assign)NSInteger select;
 
 
 @end
@@ -37,29 +36,58 @@
     [self.leftTableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
 
     [self tableView:self.leftTableView didSelectRowAtIndexPath:path];
-}
+    
+   }
 -(void)setRightDataArray:(NSArray *)rightDataArray{
     
     _rightDataArray = rightDataArray;
     
     [self.rightTableView reloadData];
 }
-
+-(UITableView *)leftTableView{
+    
+    if (!_leftTableView) {
+        
+        _leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/3, kScreenHeigth)];
+    }
+    
+    return _leftTableView;
+}
+-(UITableView *)rightTableView{
+    
+    if (!_rightTableView) {
+        
+        _rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth/3, 64, kScreenWidth/3*2, kScreenHeigth)];
+        
+    }
+    return _rightTableView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
+    [self.view addSubview:self.leftTableView];
+    [self.view addSubview:self.rightTableView];
+    self.leftTableView.delegate = self;
+    self.leftTableView.dataSource = self;
+    self.rightTableView.delegate = self;
+    self.rightTableView.dataSource = self;
+    
+    
+    [SVProgressHUD showWithStatus:@"正在加载中"];
+
     [LBSuperLeftTableViewModel productWithSuccess:^(NSArray<LBSuperLeftTableViewModel *> *array) {
    
         self.dataArray = array;
         
+
     } error:^{
         
         NSLog(@"获取失败");
     }];
     
-    
-    
+    self.rightTableView.tableHeaderView.alpha = 0.1;
+    self.leftTableView.tableFooterView = [UIView new];
+    self.rightTableView.tableFooterView = [UIView new];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -81,7 +109,11 @@
     if (tableView == self.leftTableView) {
         
         NSString *cellID = @"leftCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        if (!cell) {
+            
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        }
         LBSuperLeftTableViewModel *model = self.dataArray[indexPath.row];
         
         cell.textLabel.text = model.name;
@@ -94,22 +126,12 @@
         
         cell.model = self.rightDataArray[indexPath.row];
         cell.cellDelegate = self;
-        cell.numLabel.text = [NSString stringWithFormat:@"%zd",self.num];
+        
         return cell;
         
     }
 
     
-}
--(void)click:(UIButton *)button{
-    if (button.tag==1001) {
-        self.num ++;
-
-    }else if(self.num>0){
-        self.num--;
-    }
-   
-    [self.rightTableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,9 +139,13 @@
  
     if (tableView == self.leftTableView) {
         
+        self.select = indexPath.row;
+        
         [LBSuperLeftTableViewModel productWithID:self.dataArray[indexPath.row].id success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
             
             self.rightDataArray = array;
+            
+            [SVProgressHUD dismiss];
             
         } error:^{
             
@@ -137,6 +163,15 @@
     }
     return 44;
     
+}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (tableView == self.rightTableView) {
+        
+        return self.dataArray[self.select].name;
+        
+    }
+    return nil;
 }
 
 

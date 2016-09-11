@@ -65,19 +65,9 @@
         UIView *lineView = [UIView new];
         [self.market_priceLabel addSubview:lineView];
         self.lineView = lineView;
-        //减
-        UIButton *reduceBtn = [UIButton new];
-        [self.contentView addSubview:reduceBtn];
-        self.reduceBtn = reduceBtn;
-        //加
-        UIButton *addBtn = [UIButton new];
-        [self.contentView addSubview:addBtn];
-        self.addBtn = addBtn;
-        //数量
-        UILabel *numLabel = [UILabel new];
-        [self.contentView addSubview:numLabel];
-        self.numLabel = numLabel;
-        
+       
+        self.buyView = [[LBBuyView alloc]init];
+        [self.contentView addSubview:_buyView];
     }
     return self;
 }
@@ -119,62 +109,10 @@
     [self.market_priceLabel setTextColor:kGrayTextColor];
     
     self.lineView.backgroundColor = self.market_priceLabel.textColor;
+    self.buyView.model = self.model;
     
-    [self.addBtn setBackgroundImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
-<<<<<<< Updated upstream
-    [self.addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
-=======
-    [self.addBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    self.addBtn.tag = 1001;
->>>>>>> Stashed changes
-    
-   
-    self.numLabel.font = kMidTextFont;
-    //![self.numLabel.text isEqualToString:@"0"]||
-    if (self.numLabel.text.length>0) {
-    
-        self.numLabel.hidden = NO;
-    
-        [self.reduceBtn setBackgroundImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
-<<<<<<< Updated upstream
-        [self.reduceBtn addTarget:self action:@selector(reduceClick) forControlEvents:UIControlEventTouchUpInside];
-=======
-        [self.reduceBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-        self.reduceBtn.tag = 1002;
->>>>>>> Stashed changes
-        
-        self.reduceBtn.hidden = NO;
-    }else{
-        self.numLabel.hidden = YES;
-        self.reduceBtn.hidden = YES;
+}
 
-        
-    }
-
-    
-    
-}
-<<<<<<< Updated upstream
--(void)addClick{
-    NSLog(@"++");
-}
--(void)reduceClick{
-    NSLog(@"--");
-=======
--(void)click:(UIButton *)button{
-    NSLog(@"++//--");
-    if ([self.cellDelegate respondsToSelector:@selector(click:)]) {
-        
-        [self.cellDelegate click:button];
-        
-    }
-    
-}
--(void)reduceClick:(UIButton *)button{
-    NSLog(@"--");
-
->>>>>>> Stashed changes
-}
 -(void)setMyViewFrame{
     
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -227,25 +165,12 @@
         make.centerY.mas_equalTo(self.market_priceLabel.mas_centerY);
         make.height.mas_equalTo(1);
     }];
-    
-    [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+    [self.buyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.mas_equalTo(-5);
-        make.bottom.mas_equalTo(self.imgView.mas_bottom);
+        make.bottom.mas_equalTo(self.priceLabel.mas_bottom);
+        make.height.mas_equalTo(20);
+    }];
     
-    }];
-    [self.numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.trailing.mas_equalTo(self.addBtn.mas_leading).offset(-10);
-        make.centerY.mas_equalTo(self.addBtn.mas_centerY);
-        
-    }];
-    [self.reduceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.trailing.mas_equalTo(self.numLabel.mas_leading).offset(-10);
-        make.bottom.mas_equalTo(self.addBtn.mas_bottom);
-        
-    }];
 }
 
 @end

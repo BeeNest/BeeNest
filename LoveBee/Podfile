@@ -10,5 +10,5 @@ target 'LoveBee' do
 pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'Masonry'
-
+pod 'SVProgressHUD'
 end

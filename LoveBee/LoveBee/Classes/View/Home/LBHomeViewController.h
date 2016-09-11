@@ -6,8 +6,8 @@
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LBMainViewController.h"
 
-@interface LBHomeViewController : UIViewController
+@interface LBHomeViewController : LBMainViewController
 
 @end

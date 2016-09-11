@@ -48,6 +48,8 @@
     [self addTabBarWithNum:3 andTitle:@"我的" andImgName:@"v2_my"];
     
     
+    
+    
 }
 
 

@@ -7,8 +7,6 @@
 //
 
 #import "AFHTTPTool.h"
-
-
 @implementation AFHTTPTool
 
 +(instancetype)sharedManager{
@@ -45,8 +43,9 @@
     
 }
 -(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
-    
+ 
     [self POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         if (success) {
             
             success(responseObject);

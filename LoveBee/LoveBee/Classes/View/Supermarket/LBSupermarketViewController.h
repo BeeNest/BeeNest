@@ -6,8 +6,7 @@
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface LBSupermarketViewController : UIViewController
+#import "LBMainViewController.h"
+@interface LBSupermarketViewController : LBMainViewController
 
 @end

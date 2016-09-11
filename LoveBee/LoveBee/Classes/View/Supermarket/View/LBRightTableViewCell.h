@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LBSuperLeftTableViewModel.h"
+#import "LBBuyView.h"
 
 @protocol LBRightTableViewCellDelegate <NSObject>
 
@@ -31,16 +32,10 @@
 @property(nonatomic,weak)UILabel *priceLabel;
 //原价
 @property(nonatomic,weak)UILabel *market_priceLabel;
-//减
-@property(nonatomic,weak)UIButton *reduceBtn;
-//加
-@property(nonatomic,weak)UIButton *addBtn;
-//数量
-@property(nonatomic,weak)UILabel *numLabel;
-@property(nonatomic,assign)NSInteger *num;
 //横线
 @property(nonatomic,weak)UIView *lineView;
-
+/// 加减商品View
+@property (nonatomic, strong) LBBuyView *buyView;
 
 
 @property(strong, nonatomic)LBSuperLeftTableViewModel  *model;

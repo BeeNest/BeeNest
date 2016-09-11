@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LBGoodsModel.h"
+#import "LBSuperLeftTableViewModel.h"
 
 @interface LBBuyView : UIView
 
 @property (nonatomic, strong) LBGoodsModel *goods;
 
-
+@property (nonatomic, strong) LBSuperLeftTableViewModel *model;
 
 @end
