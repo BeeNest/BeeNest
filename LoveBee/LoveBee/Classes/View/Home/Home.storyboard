@@ -16,7 +16,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uB1-uc-MvY" kind="relationship" relationship="rootViewController" id="NyO-hs-2tC"/>
+                        <segue destination="uB1-uc-MvY" kind="relationship" relationship="rootViewController" id="1Rx-tb-lZt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhY-1I-95h" userLabel="First Responder" sceneMemberID="firstResponder"/>
