@@ -7,6 +7,7 @@
 //
 
 #import "LBBaseNavController.h"
+#import "SVProgressHUD.h"
 
 @interface LBBaseNavController ()
 
@@ -24,7 +25,7 @@
     
     // 设置文字属性
     [self.navigationBar setTitleTextAttributes:@{
-                                                 NSForegroundColorAttributeName : kGrayTextColor,
+                                                 NSForegroundColorAttributeName : [UIColor blackColor],
                                                  NSFontAttributeName : [UIFont systemFontOfSize:17]
                                                  }];
     
@@ -55,7 +56,10 @@
     viewController.editing = YES;
     
     [super pushViewController:viewController animated:animated];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
