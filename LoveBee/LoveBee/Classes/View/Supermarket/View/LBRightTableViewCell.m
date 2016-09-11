@@ -114,23 +114,31 @@
 =======
     
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
+<<<<<<< HEAD
 
     [self.addBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     self.addBtn.tag = 1001;
 
+=======
+    [self.addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+>>>>>>> parent of ee23178... 交
     
-   
+    self.numLabel.text = @"1";
     self.numLabel.font = kMidTextFont;
-    //![self.numLabel.text isEqualToString:@"0"]||
+    
     if (self.numLabel.text.length>0) {
-    
+        
         self.numLabel.hidden = NO;
-    
+        
         [self.reduceBtn setBackgroundImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
+<<<<<<< HEAD
 
         [self.reduceBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         self.reduceBtn.tag = 1002;
 
+=======
+        [self.reduceBtn addTarget:self action:@selector(reduceClick) forControlEvents:UIControlEventTouchUpInside];
+>>>>>>> parent of ee23178... 交
         
         self.reduceBtn.hidden = NO;
     }else{
@@ -143,6 +151,7 @@
     
     
 }
+<<<<<<< HEAD
 
 -(void)click:(UIButton *)button{
     NSLog(@"++//--");
@@ -158,6 +167,13 @@
 <<<<<<< HEAD
 =======
 
+=======
+-(void)addClick{
+    NSLog(@"++");
+}
+-(void)reduceClick{
+    NSLog(@"--");
+>>>>>>> parent of ee23178... 交
 }
 >>>>>>> origin/master
 -(void)setMyViewFrame{
