@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LBSuperLeftTableViewModel.h"
 #import "LBBuyView.h"
+#import "LBGoodsModel.h"
 
 @protocol LBRightTableViewCellDelegate <NSObject>
 
@@ -38,7 +39,7 @@
 @property (nonatomic, strong) LBBuyView *buyView;
 
 
-@property(strong, nonatomic)LBSuperLeftTableViewModel  *model;
+@property(strong, nonatomic)LBGoodsModel  *model;
 
 @property (strong, nonatomic) id <LBRightTableViewCellDelegate>cellDelegate;
 +(instancetype)cellWithTableView:(UITableView*)tableView;

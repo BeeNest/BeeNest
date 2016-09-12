@@ -95,11 +95,11 @@
     
 }
 
-- (void)setModel:(LBSuperLeftTableViewModel *)model{
-    _model = model;
-    _emptyLabel.hidden = !(model.number <= 0);
-    _addButton.hidden = model.number <= 0;
-}
+//- (void)setModel:(LBSuperLeftTableViewModel *)model{
+//    _model = model;
+//    _emptyLabel.hidden = !(model.number <= 0);
+//    _addButton.hidden = model.number <= 0;
+//}
 
 // 设置已选择的商品数量
 - (void)setIndexNumber:(NSInteger)indexNumber{
@@ -119,7 +119,8 @@
 // 加号按钮
 - (void)addButtonClick:(UIButton *)sender{
     NSLog(@"加号按钮点击");
-    if (self.indexNumber > self.goods.number && self.indexNumber > self.model.number) {
+    //&& self.indexNumber > self.model.number
+    if (self.indexNumber > self.goods.number ) {
         NSLog(@"库存不足");
         
         [SVProgressHUD showImage:[UIImage imageNamed:@"v2_orderSuccess"] status:@"库存不足"];

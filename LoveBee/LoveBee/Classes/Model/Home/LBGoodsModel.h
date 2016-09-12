@@ -45,6 +45,8 @@
 
 #pragma mark -商品属性
 
+///对应类里的明细
+@property (nonatomic, copy) NSString *id;
 /// 商品图片
 @property (nonatomic, copy) NSString *img;
 

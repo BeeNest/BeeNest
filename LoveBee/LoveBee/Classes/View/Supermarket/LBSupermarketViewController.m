@@ -15,8 +15,8 @@
 @property (strong, nonatomic)  UITableView *leftTableView;
 @property (strong, nonatomic)  UITableView *rightTableView;
 
-@property (strong, nonatomic) NSArray <LBSuperLeftTableViewModel *>*dataArray;
-@property (strong, nonatomic) NSArray<LBSuperLeftTableViewModel*> *rightDataArray;
+@property (strong, nonatomic) NSArray < LBGoodsModel*>*dataArray;
+@property (strong, nonatomic) NSArray<LBGoodsModel*> *rightDataArray;
 
 @property(nonatomic,assign)NSInteger select;
 
@@ -41,6 +41,7 @@
 -(void)setRightDataArray:(NSArray *)rightDataArray{
     
     _rightDataArray = rightDataArray;
+    
     
     [self.rightTableView reloadData];
 }
@@ -73,13 +74,12 @@
     self.rightTableView.dataSource = self;
     
     
-//    [SVProgressHUD showWithStatus:@"正在加载中"];
-
-    [LBSuperLeftTableViewModel productWithSuccess:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+    [LBSuperLeftTableViewModel productWithSuccess:^(NSArray *array) {
    
         self.dataArray = array;
         
-
+        NSLog(@"%@",array);
+        
     } error:^{
         
         NSLog(@"获取失败");
@@ -116,9 +116,9 @@
             
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         }
-        LBSuperLeftTableViewModel *model = self.dataArray[indexPath.row];
+
         
-        cell.textLabel.text = model.name;
+        cell.textLabel.text = self.dataArray[indexPath.row].name;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
         return cell;
@@ -146,7 +146,7 @@
         
         self.select = indexPath.row;
         
-        [LBSuperLeftTableViewModel productWithID:self.dataArray[indexPath.row].id success:^(NSArray<LBSuperLeftTableViewModel *> *array) {
+        [LBSuperLeftTableViewModel productWithID:self.dataArray[indexPath.row].id success:^(NSArray *array) {
             
             self.rightDataArray = array;
             
@@ -157,6 +157,8 @@
 
         [self.rightTableView reloadData];
     }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     

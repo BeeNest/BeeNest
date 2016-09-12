@@ -72,7 +72,7 @@
     }
     return self;
 }
--(void)setModel:(LBSuperLeftTableViewModel *)model{
+-(void)setModel:(LBGoodsModel *)model{
     
     _model = model;
     
@@ -110,7 +110,7 @@
     [self.market_priceLabel setTextColor:kGrayTextColor];
     
     self.lineView.backgroundColor = self.market_priceLabel.textColor;
-    self.buyView.model = self.model;
+    self.buyView.goods = self.model;
     
 }
 

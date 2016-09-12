@@ -38,5 +38,6 @@
 - (void)homeFreshHotLoadDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
 
 - (void)homeActivityDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
-
+#pragma mark -超市数据请求
+- (void)superDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
 @end

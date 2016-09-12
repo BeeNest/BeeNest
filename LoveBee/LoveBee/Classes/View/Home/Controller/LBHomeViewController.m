@@ -155,9 +155,6 @@
         
         [self.navigationController pushViewController:webVc animated:YES];
     }
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

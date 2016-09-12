@@ -93,4 +93,30 @@
     [self postWithUrl:url params:param success:success failure:failure];
 }
 
+#pragma mark -超市数据请求
+
+- (void)superDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure{
+    
+    NSString *url = @"http://iosapi.itcast.cn/loveBeen/supermarket.json.php";
+    
+    NSDictionary *param = @{@"call":@"5"};
+    [self postWithUrl:url params:param success:success failure:failure];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
