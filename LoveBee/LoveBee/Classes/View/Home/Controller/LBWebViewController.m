@@ -58,7 +58,7 @@
     // 设置代理
     self.webView.delegate = self;
     
-    NSLog(@"url: %@",self.model.customURL);
+//    NSLog(@"url: %@",self.model.customURL);
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.customURL]]];
 

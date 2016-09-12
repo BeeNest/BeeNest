@@ -121,9 +121,9 @@
     NSLog(@"加号按钮点击");
     if (self.indexNumber > self.goods.number && self.indexNumber > self.model.number) {
         NSLog(@"库存不足");
-        if (![SVProgressHUD isVisible]) {
-            [SVProgressHUD showImage:[UIImage imageNamed:@"v2_orderSuccess"] status:@"库存不足"];
-        }
+        
+        [SVProgressHUD showImage:[UIImage imageNamed:@"v2_orderSuccess"] status:@"库存不足"];
+        
         return;
     }
     
