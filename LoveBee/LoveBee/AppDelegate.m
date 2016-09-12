@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [NSThread sleepForTimeInterval:1.0];
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
 
     
