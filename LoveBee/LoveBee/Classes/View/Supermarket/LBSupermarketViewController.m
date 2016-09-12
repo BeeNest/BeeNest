@@ -184,7 +184,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [SVProgressHUD showWithStatus:@"正在加载"];
+//    [SVProgressHUD showWithStatus:@"正在加载"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

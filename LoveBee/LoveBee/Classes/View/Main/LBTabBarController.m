@@ -51,6 +51,11 @@
     
 }
 
+- (void)dealloc{
+    // 销毁通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)addTabBarWithNum:(NSInteger)num andTitle:(NSString *)title andImgName:(NSString*)imgName{
     UITabBarItem *item = self.items[num];
     

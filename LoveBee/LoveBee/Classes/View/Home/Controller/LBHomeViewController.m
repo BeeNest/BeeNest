@@ -12,6 +12,7 @@
 #import <UIImageView+WebCache.h>
 #import "LBHomeHeadView.h"
 #import "LBWebViewController.h"
+#import "LBRefreshHeaderView.h"
 
 @interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -38,6 +39,8 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.autoresizesSubviews = YES;
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         
     }
     return _collectionView;
@@ -64,6 +67,9 @@
     [self.collectionView registerClass:[LBHomeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell"];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
+    
+    // 设置刷新
+    [self setupRefresh];
 
     // 请求数据
     [self loadHomeData];
@@ -90,6 +96,18 @@
     }];
 }
 
+
+- (void)setupRefresh{
+    LBRefreshHeaderView *header = [LBRefreshHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(headerRefeshData)];
+    header.gifView.frame = CGRectMake(0, 0, 100, 100);
+    _collectionView.mj_header = header;
+    [_collectionView.mj_header beginRefreshing];
+}
+- (void)headerRefeshData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_collectionView.mj_header endRefreshing];
+    });
+}
 
 
 #pragma mark - UICollectionViewDataSource,  UICollectionViewDelegate

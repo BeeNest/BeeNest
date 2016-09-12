@@ -11,6 +11,7 @@
 		23E820D81D80F42A007A7205 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E820D71D80F42A007A7205 /* AppDelegate.m */; };
 		23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E820DF1D80F42A007A7205 /* Assets.xcassets */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
+		E3CB46001D86934600FDAAF5 /* LBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB45FF1D86934600FDAAF5 /* LBRefreshHeaderView.m */; };
 		E3D86AD91D8538FD0002E7A4 /* AFHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A8C1D8538FD0002E7A4 /* AFHTTPTool.m */; };
 		E3D86ADA1D8538FD0002E7A4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A8E1D8538FD0002E7A4 /* UIView+Frame.m */; };
 		E3D86ADB1D8538FD0002E7A4 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A921D8538FD0002E7A4 /* NSArray+Log.m */; };
@@ -60,6 +61,8 @@
 		23FA61071D80FBCD009B928F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6727408D407E81D97B8A6929 /* libPods-LoveBee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveBee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC67DAE5FAE794132970D32 /* Pods-LoveBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.release.xcconfig"; sourceTree = "<group>"; };
+		E3CB45FE1D86934600FDAAF5 /* LBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRefreshHeaderView.h; sourceTree = "<group>"; };
+		E3CB45FF1D86934600FDAAF5 /* LBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRefreshHeaderView.m; sourceTree = "<group>"; };
 		E3D86A8B1D8538FD0002E7A4 /* AFHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPTool.h; sourceTree = "<group>"; };
 		E3D86A8C1D8538FD0002E7A4 /* AFHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPTool.m; sourceTree = "<group>"; };
 		E3D86A8D1D8538FD0002E7A4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				E3D86AFE1D8541110002E7A4 /* LBHomeViewController.m */,
 				E3D86AFF1D8541110002E7A4 /* LBWebViewController.h */,
 				E3D86B001D8541110002E7A4 /* LBWebViewController.m */,
+				E3CB45FE1D86934600FDAAF5 /* LBRefreshHeaderView.h */,
+				E3CB45FF1D86934600FDAAF5 /* LBRefreshHeaderView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				E3D86AF71D8538FD0002E7A4 /* LBSupermarketViewController.m in Sources */,
 				E3D86AF91D8538FD0002E7A4 /* LBRightTableViewCell.m in Sources */,
 				E3D86B121D857C980002E7A4 /* LBUserShopCar.m in Sources */,
+				E3CB46001D86934600FDAAF5 /* LBRefreshHeaderView.m in Sources */,
 				E3D86AE71D8538FD0002E7A4 /* LBBaseNavController.m in Sources */,
 				E3D86ADE1D8538FD0002E7A4 /* LBGuideCollectionViewController.m in Sources */,
 				E3D86B0A1D8541110002E7A4 /* LBHomeViewController.m in Sources */,
