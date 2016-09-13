@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout*)layout
 {
-    return [self init];
+    return [super initWithCollectionViewLayout:layout];
 }
 
 - (void)viewDidLoad

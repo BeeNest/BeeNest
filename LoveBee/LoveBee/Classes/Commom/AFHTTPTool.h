@@ -40,4 +40,9 @@
 - (void)homeActivityDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
 #pragma mark -超市数据请求
 - (void)superDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
+
+#pragma mark -搜索最新关键词
+- (void)keyWordWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
+#pragma mark -搜索返回的数据
+- (void)searchDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
 @end

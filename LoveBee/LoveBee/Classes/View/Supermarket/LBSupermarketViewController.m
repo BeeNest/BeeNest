@@ -80,12 +80,15 @@
         
         NSLog(@"%@",array);
         
+        
+        
+        [self.rightTableView reloadData];
+        
     } error:^{
         
         NSLog(@"获取失败");
     }];
     
-    self.rightTableView.tableHeaderView.alpha = 0.1;
     self.leftTableView.tableFooterView = [UIView new];
     self.rightTableView.tableFooterView = [UIView new];
 }
@@ -107,8 +110,6 @@
 {
     
     if (tableView == self.leftTableView) {
-        
-        
         
         NSString *cellID = @"leftCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
@@ -132,15 +133,11 @@
         return cell;
         
     }
-
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
- 
+
     if (tableView == self.leftTableView) {
         
         
@@ -150,12 +147,13 @@
             
             self.rightDataArray = array;
             
+            
         } error:^{
             
             NSLog(@"获取失败");
         }];
 
-        [self.rightTableView reloadData];
+//        [self.rightTableView reloadData];
         
     }else {
         

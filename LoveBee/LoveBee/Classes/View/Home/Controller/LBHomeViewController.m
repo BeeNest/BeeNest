@@ -13,8 +13,9 @@
 #import "LBHomeHeadView.h"
 #import "LBWebViewController.h"
 #import "LBRefreshHeaderView.h"
+#import "UINavigationBar+OverLay.h"
 
-@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface LBHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
 /// home界面的Viewmodel
 @property (nonatomic, strong) LBHomeViewModel *viewModel;
@@ -35,13 +36,12 @@
         flowLayout.sectionInset = UIEdgeInsetsMake(5, HomeCollectionViewCellMargin, 0, HomeCollectionViewCellMargin);
 //        flowLayout.itemSize = CGSizeMake((kScreenWidth - 2 * HomeCollectionViewCellMargin) * 0.5 - 4, kScreenHeigth * 0.3 + 50);
         flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 20);
-        _collectionView = [[UICollectionView alloc]initWithFrame:kScreenBounds collectionViewLayout:flowLayout];
-        _collectionView.delegate = self;
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, -64, kScreenWidth, kScreenHeigth) collectionViewLayout:flowLayout];
         _collectionView.dataSource = self;
         _collectionView.autoresizesSubviews = YES;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
-        
+        _collectionView.backgroundColor = [UIColor whiteColor];
     }
     return _collectionView;
     
@@ -60,7 +60,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view = self.collectionView;
+//    self.view = self.collectionView;
+    [self.view addSubview:self.collectionView];
+    
+    self.view.frame = CGRectMake(0, -64, kScreenWidth, kScreenHeigth);
+    
+    [self.navigationController.navigationBar jn_setBackgroundColor:[UIColor clearColor]];
+    
     
     // 注册cell
     [self.collectionView registerClass:[LBHomeCell class] forCellWithReuseIdentifier:@"Homecell"];
@@ -99,7 +105,7 @@
 
 - (void)setupRefresh{
     LBRefreshHeaderView *header = [LBRefreshHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(headerRefeshData)];
-    header.gifView.frame = CGRectMake(0, 0, 100, 100);
+    header.gifView.frame = CGRectMake(0, -64, 100, 100);
     _collectionView.mj_header = header;
     [_collectionView.mj_header beginRefreshing];
 }
@@ -154,10 +160,11 @@
     if (section == 1) {
         return CGSizeMake(kScreenWidth, HomeCollectionViewCellMargin * 2);
     }
-    return CGSizeZero;
+    return CGSizeMake(kScreenWidth, 300);
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+
     
     LBHomeHeadView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headCell" forIndexPath:indexPath];
     
@@ -173,6 +180,37 @@
         
         [self.navigationController pushViewController:webVc animated:YES];
     }
+}
+
+#pragma mark -UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    
+    
+    UIColor * color = [UIColor colorWithRed:1.00 green:0.84 blue:0.00 alpha:1.00];
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > 50) {
+        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
+        [self.navigationController.navigationBar jn_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+    } else {
+        [self.navigationController.navigationBar jn_setBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.collectionView.delegate = self;
+    [self scrollViewDidScroll:self.collectionView];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.collectionView.delegate = nil;
+    [self.navigationController.navigationBar jn_reset];
 }
 
 - (void)didReceiveMemoryWarning {

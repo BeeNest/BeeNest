@@ -69,6 +69,8 @@
        
         self.buyView = [[LBBuyView alloc]init];
         [self.contentView addSubview:_buyView];
+        //2. 设置frame
+        [self setMyViewFrame];
     }
     return self;
 }
@@ -78,8 +80,6 @@
     
     //1. 设置数据
     [self setMyViewData];
-    //2. 设置frame
-    [self setMyViewFrame];
     
     
 }

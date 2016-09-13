@@ -105,18 +105,21 @@
 }
 
 
+- (void)keyWordWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure{
+    NSString *url = @"http://iosapi.itcast.cn/loveBeen/search.json.php";
+    
+    NSDictionary *param = @{@"call" : @"6"};
+    
+    [self postWithUrl:url params:param success:success failure:failure];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+- (void)searchDataWithSuccess:(void (^)(id response))success failure:(void (^)(NSError *error))failure{
+    
+    NSString *url = @"http://iosapi.itcast.cn/loveBeen/promotion.json.php";
+    
+    NSDictionary *param = @{@"call" : @"8"};
+    
+    [self postWithUrl:url params:param success:success failure:failure];
+}
 
 @end

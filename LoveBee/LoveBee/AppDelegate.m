@@ -22,7 +22,7 @@
     
     [NSThread sleepForTimeInterval:1.0];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
 
     
     _window = [[UIWindow alloc]initWithFrame:kScreenBounds];
@@ -52,7 +52,7 @@
         return tab;
     }
     else {
-        // 不一致,显示新特性页面(引导页)
+//         不一致,显示新特性页面(引导页)
         LBGuideCollectionViewController* guide = [[LBGuideCollectionViewController alloc] init];
         return guide;
     }

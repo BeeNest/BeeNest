@@ -12,10 +12,12 @@
 
 @implementation LBSuperLeftTableViewModel
 
-+(void)productWithSuccess:(void(^)(NSArray*array))successBlock error:(void(^)())errorBlock{
+
++ (void)productWithSuccess:(void(^)(NSArray*array))successBlock error:(void(^)())errorBlock{
+    
     
     NSMutableArray *mArray = [NSMutableArray array];
-    
+
    [[AFHTTPTool sharedManager] superDataWithSuccess:^(id response) {
        NSDictionary *data = response[@"data"];
        
@@ -26,14 +28,13 @@
            LBGoodsModel *model = [LBGoodsModel goodsWithDict:obj];
            [mArray addObject:model];
            
-           
        }];
        
        
        if (successBlock) {
            successBlock(mArray.copy);
        }
-
+       
    } failure:^(NSError *error) {
        if (error) {
            errorBlock(error);
@@ -41,8 +42,9 @@
    }];
     
     
+    
 }
-+(void)productWithID:(NSString *)ID success:(void(^)(NSArray *array))successBlock error:(void(^)())errorBlock{
++ (void)productWithID:(NSString *)ID success:(void(^)(NSArray *array))successBlock error:(void(^)())errorBlock{
     
     
     NSMutableArray *mArray = [NSMutableArray array];

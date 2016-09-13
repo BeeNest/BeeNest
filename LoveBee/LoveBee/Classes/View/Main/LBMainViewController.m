@@ -7,6 +7,8 @@
 //
 
 #import "LBMainViewController.h"
+#import "LBScancodeViewController.h"
+#import "LBSearchViewController.h"
 
 @interface LBMainViewController ()
 
@@ -28,10 +30,11 @@
 -(void)sweepClick{
     
     NSLog(@"扫一扫");
+    [self.navigationController pushViewController:[LBScancodeViewController new] animated:YES];
 }
 -(void)searchClick{
     
-    NSLog(@"搜索");
+    [self.navigationController pushViewController:[LBSearchViewController new] animated:YES];
     
 }
 -(UIBarButtonItem *)itemWithImgName:(NSString *)imgName Action:(SEL)action{

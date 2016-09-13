@@ -23,6 +23,8 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.84 blue:0.00 alpha:1.00]];
     
+    
+ 
     // 设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
     

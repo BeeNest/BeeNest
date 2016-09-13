@@ -12,6 +12,12 @@
 		23E820E01D80F42A007A7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E820DF1D80F42A007A7205 /* Assets.xcassets */; };
 		8511020E2398FE7381AAA08C /* libPods-LoveBee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6727408D407E81D97B8A6929 /* libPods-LoveBee.a */; };
 		E3CB46031D86971000FDAAF5 /* LBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46021D86971000FDAAF5 /* LBRefreshHeaderView.m */; };
+		E3CB46071D86AB9000FDAAF5 /* UINavigationBar+OverLay.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46061D86AB9000FDAAF5 /* UINavigationBar+OverLay.m */; };
+		E3CB460D1D86C67900FDAAF5 /* XLSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB460C1D86C67900FDAAF5 /* XLSphereView.m */; };
+		E3CB46161D86C7BA00FDAAF5 /* LBScancodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46101D86C7BA00FDAAF5 /* LBScancodeViewController.m */; };
+		E3CB46171D86C7BA00FDAAF5 /* LBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46121D86C7BA00FDAAF5 /* LBSearchViewController.m */; };
+		E3CB46181D86C7BA00FDAAF5 /* LBLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46151D86C7BA00FDAAF5 /* LBLabelView.m */; };
+		E3CB46261D86C88F00FDAAF5 /* LBSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB46251D86C88F00FDAAF5 /* LBSearchViewModel.m */; };
 		E3D86AD91D8538FD0002E7A4 /* AFHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A8C1D8538FD0002E7A4 /* AFHTTPTool.m */; };
 		E3D86ADA1D8538FD0002E7A4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A8E1D8538FD0002E7A4 /* UIView+Frame.m */; };
 		E3D86ADB1D8538FD0002E7A4 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D86A921D8538FD0002E7A4 /* NSArray+Log.m */; };
@@ -63,6 +69,20 @@
 		6AC67DAE5FAE794132970D32 /* Pods-LoveBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveBee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveBee/Pods-LoveBee.release.xcconfig"; sourceTree = "<group>"; };
 		E3CB46011D86971000FDAAF5 /* LBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRefreshHeaderView.h; sourceTree = "<group>"; };
 		E3CB46021D86971000FDAAF5 /* LBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRefreshHeaderView.m; sourceTree = "<group>"; };
+		E3CB46051D86AB9000FDAAF5 /* UINavigationBar+OverLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+OverLay.h"; sourceTree = "<group>"; };
+		E3CB46061D86AB9000FDAAF5 /* UINavigationBar+OverLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+OverLay.m"; sourceTree = "<group>"; };
+		E3CB46091D86C67900FDAAF5 /* XLMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLMatrix.h; sourceTree = "<group>"; };
+		E3CB460A1D86C67900FDAAF5 /* XLPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPoint.h; sourceTree = "<group>"; };
+		E3CB460B1D86C67900FDAAF5 /* XLSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSphereView.h; sourceTree = "<group>"; };
+		E3CB460C1D86C67900FDAAF5 /* XLSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSphereView.m; sourceTree = "<group>"; };
+		E3CB460F1D86C7BA00FDAAF5 /* LBScancodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBScancodeViewController.h; sourceTree = "<group>"; };
+		E3CB46101D86C7BA00FDAAF5 /* LBScancodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBScancodeViewController.m; sourceTree = "<group>"; };
+		E3CB46111D86C7BA00FDAAF5 /* LBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchViewController.h; sourceTree = "<group>"; };
+		E3CB46121D86C7BA00FDAAF5 /* LBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchViewController.m; sourceTree = "<group>"; };
+		E3CB46141D86C7BA00FDAAF5 /* LBLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLabelView.h; sourceTree = "<group>"; };
+		E3CB46151D86C7BA00FDAAF5 /* LBLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLabelView.m; sourceTree = "<group>"; };
+		E3CB46241D86C88F00FDAAF5 /* LBSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchViewModel.h; sourceTree = "<group>"; };
+		E3CB46251D86C88F00FDAAF5 /* LBSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchViewModel.m; sourceTree = "<group>"; };
 		E3D86A8B1D8538FD0002E7A4 /* AFHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPTool.h; sourceTree = "<group>"; };
 		E3D86A8C1D8538FD0002E7A4 /* AFHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPTool.m; sourceTree = "<group>"; };
 		E3D86A8D1D8538FD0002E7A4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -75,7 +95,6 @@
 		E3D86A981D8538FD0002E7A4 /* LBHomeActivitieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeActivitieModel.m; sourceTree = "<group>"; };
 		E3D86A9C1D8538FD0002E7A4 /* LBGuideCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCollectionViewController.h; sourceTree = "<group>"; };
 		E3D86A9D1D8538FD0002E7A4 /* LBGuideCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCollectionViewController.m; sourceTree = "<group>"; };
-		E3D86A9E1D8538FD0002E7A4 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E3D86AA01D8538FD0002E7A4 /* LBGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideCell.h; sourceTree = "<group>"; };
 		E3D86AA11D8538FD0002E7A4 /* LBGuideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideCell.m; sourceTree = "<group>"; };
 		E3D86AA31D8538FD0002E7A4 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
@@ -199,6 +218,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E3CB46081D86C67900FDAAF5 /* SphereView */ = {
+			isa = PBXGroup;
+			children = (
+				E3CB46091D86C67900FDAAF5 /* XLMatrix.h */,
+				E3CB460A1D86C67900FDAAF5 /* XLPoint.h */,
+				E3CB460B1D86C67900FDAAF5 /* XLSphereView.h */,
+				E3CB460C1D86C67900FDAAF5 /* XLSphereView.m */,
+			);
+			path = SphereView;
+			sourceTree = "<group>";
+		};
+		E3CB460E1D86C7BA00FDAAF5 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				E3CB460F1D86C7BA00FDAAF5 /* LBScancodeViewController.h */,
+				E3CB46101D86C7BA00FDAAF5 /* LBScancodeViewController.m */,
+				E3CB46111D86C7BA00FDAAF5 /* LBSearchViewController.h */,
+				E3CB46121D86C7BA00FDAAF5 /* LBSearchViewController.m */,
+				E3CB46131D86C7BA00FDAAF5 /* View */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		E3CB46131D86C7BA00FDAAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3CB46141D86C7BA00FDAAF5 /* LBLabelView.h */,
+				E3CB46151D86C7BA00FDAAF5 /* LBLabelView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E3D86A891D8538FD0002E7A4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +273,8 @@
 				E3D86B111D857C980002E7A4 /* LBUserShopCar.m */,
 				E3CB46011D86971000FDAAF5 /* LBRefreshHeaderView.h */,
 				E3CB46021D86971000FDAAF5 /* LBRefreshHeaderView.m */,
+				E3CB46051D86AB9000FDAAF5 /* UINavigationBar+OverLay.h */,
+				E3CB46061D86AB9000FDAAF5 /* UINavigationBar+OverLay.m */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -229,6 +282,7 @@
 		E3D86A8F1D8538FD0002E7A4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E3CB46081D86C67900FDAAF5 /* SphereView */,
 				E3D86A901D8538FD0002E7A4 /* Log */,
 			);
 			path = Lib;
@@ -289,7 +343,6 @@
 			children = (
 				E3D86A9C1D8538FD0002E7A4 /* LBGuideCollectionViewController.h */,
 				E3D86A9D1D8538FD0002E7A4 /* LBGuideCollectionViewController.m */,
-				E3D86A9E1D8538FD0002E7A4 /* PrefixHeader.pch */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +368,7 @@
 		E3D86AB01D8538FD0002E7A4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E3CB460E1D86C7BA00FDAAF5 /* NavigationBar */,
 				E3D86AB11D8538FD0002E7A4 /* LBBaseNavController.h */,
 				E3D86AB21D8538FD0002E7A4 /* LBBaseNavController.m */,
 				E3D86AB31D8538FD0002E7A4 /* LBMainViewController.h */,
@@ -386,6 +440,8 @@
 				E3D86AD61D8538FD0002E7A4 /* LBHomeViewModel.m */,
 				E3D86AD71D8538FD0002E7A4 /* LBSuperLeftTableViewModel.h */,
 				E3D86AD81D8538FD0002E7A4 /* LBSuperLeftTableViewModel.m */,
+				E3CB46241D86C88F00FDAAF5 /* LBSearchViewModel.h */,
+				E3CB46251D86C88F00FDAAF5 /* LBSearchViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -550,11 +606,15 @@
 				E3D86AF11D8538FD0002E7A4 /* LBMeTwoCell.m in Sources */,
 				E3D86ADB1D8538FD0002E7A4 /* NSArray+Log.m in Sources */,
 				E3D86AF71D8538FD0002E7A4 /* LBSupermarketViewController.m in Sources */,
+				E3CB46071D86AB9000FDAAF5 /* UINavigationBar+OverLay.m in Sources */,
+				E3CB46181D86C7BA00FDAAF5 /* LBLabelView.m in Sources */,
 				E3D86AF91D8538FD0002E7A4 /* LBRightTableViewCell.m in Sources */,
 				E3D86B121D857C980002E7A4 /* LBUserShopCar.m in Sources */,
 				E3CB46031D86971000FDAAF5 /* LBRefreshHeaderView.m in Sources */,
 				E3D86AE71D8538FD0002E7A4 /* LBBaseNavController.m in Sources */,
 				E3D86ADE1D8538FD0002E7A4 /* LBGuideCollectionViewController.m in Sources */,
+				E3CB46161D86C7BA00FDAAF5 /* LBScancodeViewController.m in Sources */,
+				E3CB46171D86C7BA00FDAAF5 /* LBSearchViewController.m in Sources */,
 				E3D86B0A1D8541110002E7A4 /* LBHomeViewController.m in Sources */,
 				E3D86AEF1D8538FD0002E7A4 /* LBMeorderViewController.m in Sources */,
 				E3D86B0B1D8541110002E7A4 /* LBWebViewController.m in Sources */,
@@ -568,6 +628,7 @@
 				E3D86AFA1D8538FD0002E7A4 /* LBHomeViewModel.m in Sources */,
 				E3D86AEB1D8538FD0002E7A4 /* LBMeCell.m in Sources */,
 				E3D86B0D1D8541110002E7A4 /* LBHomeCell.m in Sources */,
+				E3CB46261D86C88F00FDAAF5 /* LBSearchViewModel.m in Sources */,
 				E3D86B0E1D8541110002E7A4 /* LBHomeHeadView.m in Sources */,
 				E3D86AD91D8538FD0002E7A4 /* AFHTTPTool.m in Sources */,
 				E3D86ADC1D8538FD0002E7A4 /* LBGoodsModel.m in Sources */,
@@ -575,6 +636,7 @@
 				E3D86AE81D8538FD0002E7A4 /* LBMainViewController.m in Sources */,
 				E3D86ADF1D8538FD0002E7A4 /* LBGuideCell.m in Sources */,
 				23E820D51D80F42A007A7205 /* main.m in Sources */,
+				E3CB460D1D86C67900FDAAF5 /* XLSphereView.m in Sources */,
 				E3D86AFB1D8538FD0002E7A4 /* LBSuperLeftTableViewModel.m in Sources */,
 				E3D86AED1D8538FD0002E7A4 /* LBMeFourCell.m in Sources */,
 			);
